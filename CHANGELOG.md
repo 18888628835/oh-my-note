@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.0](https://github.com/18888628835/oh-my-note/compare/v1.13.0...v1.14.0) (2023-07-03)
+
+
+### Features
+
+* auto open menu ([13f3e58](https://github.com/18888628835/oh-my-note/commit/13f3e58c2d6aab9840bf92817619869fcbd27be2))
+
 ## [1.13.0](https://github.com/18888628835/oh-my-note/compare/v1.12.0...v1.13.0) (2023-07-01)
 
 
