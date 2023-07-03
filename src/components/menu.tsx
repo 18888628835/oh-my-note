@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import React, { FC } from 'react'
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 import { styled } from 'styled-components'
+import useDecodeParams from 'src/hooks/useDecodeParams'
 const StyledMenu = styled(AntdMenu)`
   &.ant-menu-root {
     border: none;
@@ -33,9 +34,13 @@ const StyledMenu = styled(AntdMenu)`
 `
 const Menu: FC<MenuProps> = (props) => {
   const { push } = useRouter()
+  const { category, slug } = useDecodeParams()
+  const extendFolder = slug.slice(0, slug.lastIndexOf('/'))
 
   return (
     <StyledMenu
+      defaultOpenKeys={[decodeURIComponent(`docs/${category}/${extendFolder}`)]}
+      defaultSelectedKeys={[decodeURIComponent(`docs/${category}/${slug}`)]}
       expandIcon={({ isOpen }) => (
         <MdOutlineKeyboardArrowRight
           className={classNames('transition-transform', 'text-xl', 'text-[#b8b8c1]', {
