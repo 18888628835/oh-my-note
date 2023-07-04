@@ -31,7 +31,7 @@ const page = async ({ params: { slug, category } }: { params: { slug: string[]; 
     <div className={styles['doc-main-container']}>
       <div className={classNames(styles['doc-container'], 'pl-4')}>
         <article className={styles['doc-article']}>
-          <div className="mt-4 mb-7 md:mt-2 md:mb-10">
+          <div className="mt-4 mb-7 md:mt-2 md:mb-8">
             <Breadcrumb items={breadcrumbItems} />
           </div>
           <AnimateImageProvider>

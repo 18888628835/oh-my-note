@@ -42,7 +42,7 @@ const CodeBlock: FC<PropsWithChildren<CopyProps>> = ({ language, code, renderHig
       <div className={classNames(styles['copy-wrap'], 'flex-space-between-box')}>
         <div className={styles['language']}>{language}</div>
         <div className="flex gap-1">
-          {['js', 'javascript'].includes(language) && (
+          {['js', 'javascript'].includes(language.toLocaleLowerCase()) && (
             <Tooltip title="执行代码">
               <button
                 onClick={() => executeJS(code)}

@@ -36,7 +36,7 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
               <CodeBlock
                 {...{ code, mode, language }}
                 renderHighlighter={
-                  <SyntaxHighlighter {...props} language={language}>
+                  <SyntaxHighlighter {...props} language={language.toLocaleLowerCase()}>
                     {code}
                   </SyntaxHighlighter>
                 }
