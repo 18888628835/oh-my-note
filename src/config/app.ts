@@ -5,7 +5,7 @@ const AppConfig = {
       path: '/docs/note/git',
     },
     { title: 'Thinking', path: '/docs/Thinking/如何做前端性能优化/-1' },
-    { title: 'Collaborate', path: '/docs/collaborate' },
+    { title: 'Collaborate', path: '/docs/collaborate/commit' },
     { title: 'Practice', path: '/docs/Practice/CSS/0' },
   ],
   docsPath: 'docs',
