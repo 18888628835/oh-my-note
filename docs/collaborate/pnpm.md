@@ -1,4 +1,4 @@
-# pnpm
+# Pnpm
 
 ## npm 和 yarn 的问题
 
