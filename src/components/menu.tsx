@@ -2,8 +2,9 @@
 import { Menu as AntdMenu, MenuProps } from 'antd'
 import classNames from 'classnames'
 import { useRouter } from 'next/navigation'
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
+import { useUpdateEffect } from 'react-use'
 import { styled } from 'styled-components'
 import useDecodeParams from 'src/hooks/useDecodeParams'
 const StyledMenu = styled(AntdMenu)`
@@ -35,12 +36,18 @@ const StyledMenu = styled(AntdMenu)`
 const Menu: FC<MenuProps> = (props) => {
   const { push } = useRouter()
   const { category, slug } = useDecodeParams()
+  const [selectedKeys, setSelectedKeys] = useState<Array<string>>([])
   const extendFolder = slug.slice(0, slug.lastIndexOf('/'))
+
+  useUpdateEffect(() => {
+    setSelectedKeys([decodeURIComponent(`docs/${category}/${slug}`)])
+  }, [category, slug])
 
   return (
     <StyledMenu
       defaultOpenKeys={[decodeURIComponent(`docs/${category}/${extendFolder}`)]}
-      defaultSelectedKeys={[decodeURIComponent(`docs/${category}/${slug}`)]}
+      selectedKeys={selectedKeys}
+      onSelect={({ selectedKeys }) => setSelectedKeys(selectedKeys)}
       expandIcon={({ isOpen }) => (
         <MdOutlineKeyboardArrowRight
           className={classNames('transition-transform', 'text-xl', 'text-[#b8b8c1]', {
@@ -48,7 +55,7 @@ const Menu: FC<MenuProps> = (props) => {
           })}
         />
       )}
-      className="text-ellipsis whitespace-nowrap overflow-hidden"
+      className="text-ellipsis whitespace-nowrap overflow-x-hidden overflow-y-auto"
       {...props}
       onClick={(item) => {
         push(item.key)
