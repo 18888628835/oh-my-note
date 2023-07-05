@@ -2,9 +2,8 @@
 import { Menu as AntdMenu, MenuProps } from 'antd'
 import classNames from 'classnames'
 import { useRouter } from 'next/navigation'
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
-import { useUpdateEffect } from 'react-use'
 import { styled } from 'styled-components'
 import useDecodeParams from 'src/hooks/useDecodeParams'
 const StyledMenu = styled(AntdMenu)`
@@ -39,7 +38,7 @@ const Menu: FC<MenuProps> = (props) => {
   const [selectedKeys, setSelectedKeys] = useState<Array<string>>([])
   const extendFolder = slug.slice(0, slug.lastIndexOf('/'))
 
-  useUpdateEffect(() => {
+  useEffect(() => {
     setSelectedKeys([decodeURIComponent(`docs/${category}/${slug}`)])
   }, [category, slug])
 
