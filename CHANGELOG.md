@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.14.1](https://github.com/18888628835/oh-my-note/compare/v1.14.0...v1.14.1) (2023-07-05)
+
+
+### Bug Fixes
+
+* highlight menuItem when initialize page ([dd0aa0f](https://github.com/18888628835/oh-my-note/commit/dd0aa0f679196e24d48acb2f8aa4358dfa08ae64))
+* menu auto scroll and selectedKeys ([b00f1b5](https://github.com/18888628835/oh-my-note/commit/b00f1b50fc5c3c8dc1882e353bbea1461afa8720))
+
 ## [1.14.0](https://github.com/18888628835/oh-my-note/compare/v1.13.0...v1.14.0) (2023-07-03)
 
 
