@@ -5,6 +5,7 @@ import 'src/style/variable.css'
 import 'src/style/reset.css'
 import 'src/style/global.css'
 import { Metadata } from 'next'
+import BackTop from 'src/components/BackTop'
 import Provider from 'src/components/Provider'
 import Header from 'src/components/header'
 import AppConfig from 'src/config/app'
@@ -23,6 +24,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <Provider>
             <Header nav={nav} />
             {children}
+            <BackTop />
           </Provider>
         </StyledJsxRegistry>
       </body>
