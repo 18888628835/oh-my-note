@@ -425,9 +425,13 @@ typeof 可以用来收窄以下类型：`number`、`string`、`function`、`obje
 
   我们定义了一个`isA`的函数，注意它的返回值需要是`x is A`而不是`boolean`。这样 TS 就能识别我们手动收窄的类型。
 
-  以下是不用 is 关键字进行收窄的效果，可以看到报错了。
+  以下是不用 is 关键字的案例，可以看到报错了。
 
-  ![image-20221005195328878](https://raw.githubusercontent.com/18888628835/image-cloud/main/assets202307052025974.png)
+  ![image-20230711111324262](https://raw.githubusercontent.com/18888628835/image-cloud/main/assets202307111113861.png)
+
+  使用 is 后，类型收窄完成，报错消失。
+
+  ![image-20230711111551366](https://raw.githubusercontent.com/18888628835/image-cloud/main/assets202307111115441.png)
 
 - **as 断言**
 

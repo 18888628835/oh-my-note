@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
+import Link from 'next/link'
 import { FC } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { Prism } from 'react-syntax-highlighter'
@@ -67,6 +68,16 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
                 <img loading="lazy" className="max-w-full" alt={alt || ''} src={src || ''} />
               </span>
             )
+          },
+          a({ href, children, ...restProps }) {
+            if (href && !href?.includes('http')) {
+              return (
+                <Link href={href} {...restProps}>
+                  <div>{children}</div>
+                </Link>
+              )
+            }
+            return <a {...{ href, children, ...restProps }} />
           },
         }}
         className="markdown-body"
