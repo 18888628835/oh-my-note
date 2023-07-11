@@ -65,7 +65,7 @@ const Header: FC<HeaderProps> = ({ nav }) => {
             className={classNames('flex', 'items-center', 'justify-center', styles['nav-link'], styles['brand'])}
             href="/"
           >
-            <Image className={styles['logo']} width={29} height={32} alt="" src="/logo-xs.png"></Image>
+            <Image className={styles['logo']} width={29} height={32} alt="" src="/logosc-new.svg"></Image>
             <b>Oh-My-Note</b>
           </Link>
 
