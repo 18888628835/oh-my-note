@@ -65,7 +65,7 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
           img({ src, alt }) {
             return (
               <span className="flex justify-center items-center border-gray-200 border rounded-md mt-6 mb-6 p-2">
-                <img loading="lazy" className="max-w-full" alt={alt || ''} src={src || ''} />
+                <img loading="lazy" className="blur-sm" alt={alt || ''} src={src || ''} />
               </span>
             )
           },
@@ -73,7 +73,7 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
             if (href && !href?.includes('http')) {
               return (
                 <Link href={href} {...restProps}>
-                  <div>{children}</div>
+                  <span>{children}</span>
                 </Link>
               )
             }
