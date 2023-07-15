@@ -15,6 +15,7 @@ specifiers:
   classnames: ^2.3.2
   codesandbox: ^2.2.3
   cz-conventional-changelog: ^3.3.0
+  daisyui: ^3.2.1
   eslint: 8.40.0
   eslint-config-next: 13.4.1
   eslint-config-prettier: ^8.8.0
@@ -88,6 +89,7 @@ devDependencies:
   '@typescript-eslint/parser': registry.npmmirror.com/@typescript-eslint/parser/5.59.2_3qfatcekpgbllh6uk5ivyhkbxq
   autoprefixer: registry.npmmirror.com/autoprefixer/10.4.14_postcss@8.4.24
   cz-conventional-changelog: registry.npmmirror.com/cz-conventional-changelog/3.3.0
+  daisyui: registry.npmmirror.com/daisyui/3.2.1
   eslint-config-prettier: registry.npmmirror.com/eslint-config-prettier/8.8.0_eslint@8.40.0
   eslint-plugin-import: registry.npmmirror.com/eslint-plugin-import/2.27.5_fpivltgahi4upti426avloygci
   eslint-plugin-prettier: registry.npmmirror.com/eslint-plugin-prettier/4.2.1_mnhdxnhvwtt24ndv5d2pwtkrna
@@ -5763,6 +5765,20 @@ packages:
       hyphenate-style-name: registry.npmmirror.com/hyphenate-style-name/1.0.4
     dev: false
 
+  registry.npmmirror.com/css-selector-tokenizer/0.8.0:
+    resolution:
+      {
+        integrity: sha512-Jd6Ig3/pe62/qe5SBPTN8h8LeUg/pT4lLgtavPf7updwwHpvFzxvOQBHYj2LZDMjUnBzgvIUSjRcf6oT5HzHFg==,
+        registry: https://registry.npm.taobao.org/,
+        tarball: https://registry.npmmirror.com/css-selector-tokenizer/-/css-selector-tokenizer-0.8.0.tgz,
+      }
+    name: css-selector-tokenizer
+    version: 0.8.0
+    dependencies:
+      cssesc: registry.npmmirror.com/cssesc/3.0.0
+      fastparse: registry.npmmirror.com/fastparse/1.1.2
+    dev: true
+
   registry.npmmirror.com/css-to-react-native/3.2.0:
     resolution:
       {
@@ -5878,6 +5894,26 @@ packages:
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
+    dev: true
+
+  registry.npmmirror.com/daisyui/3.2.1:
+    resolution:
+      {
+        integrity: sha512-gIqE6wiqoJt9G8+n3R/SwLeUnpNCE2eDhT73rP0yZYVaM7o6zVcakBH3aEW5RGpx3UkonPiLuvcgxRcb2lE8TA==,
+        registry: https://registry.npm.taobao.org/,
+        tarball: https://registry.npmmirror.com/daisyui/-/daisyui-3.2.1.tgz,
+      }
+    name: daisyui
+    version: 3.2.1
+    engines: { node: '>=16.9.0' }
+    dependencies:
+      colord: registry.npmmirror.com/colord/2.9.3
+      css-selector-tokenizer: registry.npmmirror.com/css-selector-tokenizer/0.8.0
+      postcss: registry.npmmirror.com/postcss/8.4.24
+      postcss-js: registry.npmmirror.com/postcss-js/4.0.1_postcss@8.4.24
+      tailwindcss: registry.npmmirror.com/tailwindcss/3.3.2
+    transitivePeerDependencies:
+      - ts-node
     dev: true
 
   registry.npmmirror.com/damerau-levenshtein/1.0.8:
@@ -7468,6 +7504,17 @@ packages:
     name: fastest-stable-stringify
     version: 2.0.2
     dev: false
+
+  registry.npmmirror.com/fastparse/1.1.2:
+    resolution:
+      {
+        integrity: sha512-483XLLxTVIwWK3QTrMGRqUfUpoOs/0hbQrl2oz4J0pAcm3A3bu84wxTFqGqkJzewCLdME38xJLJAxBABfQT8sQ==,
+        registry: https://registry.npm.taobao.org/,
+        tarball: https://registry.npmmirror.com/fastparse/-/fastparse-1.1.2.tgz,
+      }
+    name: fastparse
+    version: 1.1.2
+    dev: true
 
   registry.npmmirror.com/fastq/1.15.0:
     resolution:

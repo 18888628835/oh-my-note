@@ -8,6 +8,7 @@ import { signIn, signOut, useSession } from 'next-auth/react'
 import { FC } from 'react'
 import { AiFillCaretDown } from 'react-icons/ai'
 import styles from 'src/components/header/index.module.scss'
+import Search from 'src/components/search/Search'
 import AppConfig from 'src/config/app'
 import useIsScroll from 'src/hooks/useIsScroll'
 interface HeaderProps {
@@ -19,7 +20,7 @@ const Header: FC<HeaderProps> = ({ nav }) => {
   const session = useSession()
   const { data } = session
   const { isScroll } = useIsScroll()
-  const rootClasses = classNames(styles['page-header'], styles['page-header-sticky'])
+  const rootClasses = classNames(styles['page-header'], styles['page-header-sticky'], 'px-9')
   const signOutItems = [
     {
       key: '1',
@@ -76,7 +77,8 @@ const Header: FC<HeaderProps> = ({ nav }) => {
           ))}
         </div>
         <div className={styles['nav-right']}>
-          <div className={styles['action']}>
+          <div className={classNames(styles['action'], 'flex gap-2')}>
+            <Search />
             <Dropdown
               menu={{
                 items: dropdownItems,

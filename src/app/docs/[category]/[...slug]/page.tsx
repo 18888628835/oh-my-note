@@ -1,9 +1,7 @@
 import fs from 'fs'
 import path from 'path'
-import classNames from 'classnames'
 import { marked } from 'marked'
 import { notFound } from 'next/navigation'
-import styles from 'src/app/docs/[category]/[...slug]/page.module.scss'
 import AnimateImageProvider from 'src/components/AnimateImageProvider'
 import Breadcrumb from 'src/components/breadcrumb'
 import RenderMarkdown from 'src/components/renderMarkdown'
@@ -28,9 +26,9 @@ const page = async ({ params: { slug, category } }: { params: { slug: string[]; 
     notFound()
   }
   return (
-    <div className={styles['doc-main-container']}>
-      <div className={classNames(styles['doc-container'], 'pl-4')}>
-        <article className={styles['doc-article']}>
+    <div className="flex-grow w-full lg:max-w-[calc(100%-var(--doc-sidebar-width))] mt-[var(--doc-margin-top)]">
+      <div className="flex w-full h-full px-4 s:px-8 sm:px-16">
+        <article className="xl:px-4 flex-grow overflow-scroll">
           <div className="mt-4 mb-7 md:mt-2 md:mb-8">
             <Breadcrumb items={breadcrumbItems} />
           </div>

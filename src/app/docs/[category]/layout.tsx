@@ -2,7 +2,6 @@ import fs from 'fs'
 import path from 'path'
 import { notFound } from 'next/navigation'
 import React from 'react'
-import styles from 'src/app/docs/[category]/layout.module.scss'
 import Menu from 'src/components/menu'
 import AppConfig from 'src/config/app'
 import { deleteSuffix, getLabelFromMarkdown, readDir } from 'src/lib/util'
@@ -22,8 +21,8 @@ const layout = async ({
     notFound()
   }
   return (
-    <section className={styles['main-container']}>
-      <aside className={styles['doc-sidebar-container']}>
+    <section className="flex min-h-[calc(100vh-var(--page-header-height))]">
+      <aside className="md:w-[--doc-sidebar-width] w-0 hidden md:block">
         <Menu items={categoryMenu} mode="inline" />
       </aside>
       {children}
