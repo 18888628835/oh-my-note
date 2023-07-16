@@ -11,7 +11,7 @@ import Header from 'src/components/header'
 import AppConfig from 'src/config/app'
 import StyledJsxRegistry from 'src/lib/registry'
 export const metadata: Metadata = {
-  title: 'Oh-My-Note',
+  title: AppConfig.brand,
   description: '业余时间手写的文档系统，记录着我的心得笔记。',
 }
 

@@ -59,31 +59,19 @@ const Header: FC<HeaderProps> = ({ nav }) => {
   const dropdownItems = data ? signOutItems : signInItems
   return (
     <header className={classNames(styles['page-header'], styles['page-header-sticky'], 'sm:px-9')}>
-      <div className="drawer">
+      <div className="drawer drawer-end">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
           {/* Navbar */}
           <nav className="w-full navbar">
-            <div className="flex-none lg:hidden">
-              <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  className="inline-block w-6 h-6 stroke-current"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-              </label>
-            </div>
             <div className="flex-1 px-2 mx-2">
-              <div className="md:flex items-center whitespace-nowrap xs:block hidden">
+              <div className="md:flex items-center whitespace-nowrap ">
                 <Link
                   className={classNames('flex', 'items-center', 'justify-center', styles['nav-link'], styles['brand'])}
                   href="/"
                 >
                   <Image className={styles['logo']} width={29} height={32} alt="" src="/logosc-new.svg"></Image>
-                  <b>Oh-My-Note</b>
+                  <b className="xs:block hidden">{AppConfig.brand}</b>
                 </Link>
                 <div className="hidden md:block">
                   {nav.map(({ title, path }, index) => (
@@ -122,14 +110,34 @@ const Header: FC<HeaderProps> = ({ nav }) => {
                 </div>
               </div>
               <Search />
+              <div className="flex-none lg:hidden">
+                <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
+                  <svg width="24" height="24" fill="none" aria-hidden="true">
+                    <path
+                      d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </label>
+              </div>
             </div>
           </nav>
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 h-full bg-white">
+          <ul className="menu p-4 w-[80%] xs:w-80 h-full bg-white">
             {/* Sidebar content here */}
-            <li className="md:hidden">
+            <div className="border-b border-solid border-base-200 pb-2">
+              <Link className={classNames('flex', 'items-center', styles['nav-link'], styles['brand'])} href="/">
+                <Image className={styles['logo']} width={29} height={32} alt="" src="/logosc-new.svg"></Image>
+                <b>{AppConfig.brand}</b>
+              </Link>
+            </div>
+
+            <li>
               <details open>
                 <summary>Documentation</summary>
                 <ul>

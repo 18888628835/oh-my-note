@@ -34,9 +34,9 @@ for example
     }
     .grid-container {
       display: grid;
-      width: 300px;
-      grid-template-columns: 100px 100px 100px;
-      grid-template-rows: 100px 100px 100px;
+      width: 150px;
+      grid-template-columns: 50px 50px 50px;
+      grid-template-rows: 50px 50px 50px;
       justify-content: stretch;
       gap: 2px;
     }

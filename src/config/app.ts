@@ -1,4 +1,5 @@
 const AppConfig = {
+  brand: 'Oh-My-Note',
   navigation: [
     {
       title: 'Note',
