@@ -84,7 +84,7 @@ const Header: FC<HeaderProps> = ({ nav }) => {
                   className={classNames('flex', 'items-center', 'justify-center', styles['nav-link'], styles['brand'])}
                   href="/"
                 >
-                  <Image className={styles['logo']} width={29} height={32} alt="" src="/logosc-new.svg"></Image>
+                  <Image className={styles['logo']} width={32} height={32} alt="" src="/logosc-new.svg"></Image>
                   <b className="xs:block hidden">{AppConfig.brand}</b>
                 </Link>
                 <div className="hidden md:block">

@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@docsearch/react': '3'
+  '@mobx-devtools/tools': ^0.0.4
   '@types/marked': ^5.0.0
   '@types/node': 20.1.0
   '@types/react': 18.2.6
@@ -28,6 +29,8 @@ specifiers:
   husky: ^8.0.3
   lint-staged: ^13.2.2
   marked: ^5.0.2
+  mobx: ^6.9.1
+  mobx-react-lite: ^4.0.3
   next: 13.4.1
   next-auth: ^4.22.1
   normalize.css: ^8.0.1
@@ -55,6 +58,7 @@ specifiers:
 
 dependencies:
   '@docsearch/react': registry.npmmirror.com/@docsearch/react/3.5.1_tqcjxml4rosq5qpg5cznikfcd4
+  '@mobx-devtools/tools': registry.npmmirror.com/@mobx-devtools/tools/0.0.4_mobx@6.9.1
   '@types/node': registry.npmmirror.com/@types/node/20.1.0
   '@types/react': registry.npmmirror.com/@types/react/18.2.6
   '@types/react-dom': registry.npmmirror.com/@types/react-dom/18.2.4
@@ -67,6 +71,8 @@ dependencies:
   fastdom: registry.npmmirror.com/fastdom/1.0.11
   framer-motion: registry.npmmirror.com/framer-motion/10.12.10_biqbaboplfbrettd7655fr4n2y
   marked: registry.npmmirror.com/marked/5.0.2
+  mobx: registry.npmmirror.com/mobx/6.9.1
+  mobx-react-lite: registry.npmmirror.com/mobx-react-lite/4.0.3_q5dnkyfovs6yv7piwditx6637q
   next: registry.npmmirror.com/next/13.4.1_txdvpvppf2ilsh27xadmwrzlmm
   next-auth: registry.npmmirror.com/next-auth/4.22.1_2xek2u27flvv5bywadnu4xxgx4
   normalize.css: registry.npmmirror.com/normalize.css/8.0.1
@@ -3143,6 +3149,22 @@ packages:
       '@jridgewell/sourcemap-codec': registry.npmmirror.com/@jridgewell/sourcemap-codec/1.4.15
     dev: true
     optional: true
+
+  registry.npmmirror.com/@mobx-devtools/tools/0.0.4_mobx@6.9.1:
+    resolution:
+      {
+        integrity: sha512-zQq8JMMqaXwWmPSxUIFhaBe/RzHoY/FV8zNyt3l2ERWTS8DN53pHrmFp5mR5byIpARXt7eHZ2mW1OCjDQz3JcA==,
+        registry: https://registry.npm.taobao.org/,
+        tarball: https://registry.npmmirror.com/@mobx-devtools/tools/-/tools-0.0.4.tgz,
+      }
+    id: registry.npmmirror.com/@mobx-devtools/tools/0.0.4
+    name: '@mobx-devtools/tools'
+    version: 0.0.4
+    peerDependencies:
+      mobx: '>=6.0.0'
+    dependencies:
+      mobx: registry.npmmirror.com/mobx/6.9.1
+    dev: false
 
   registry.npmmirror.com/@next/env/13.4.1:
     resolution:
@@ -12089,6 +12111,44 @@ packages:
       minimist: registry.npmmirror.com/minimist/1.2.8
     dev: false
 
+  registry.npmmirror.com/mobx-react-lite/4.0.3_q5dnkyfovs6yv7piwditx6637q:
+    resolution:
+      {
+        integrity: sha512-wEE1oT5zvDdvplG4HnRrFgPwg5GFVVrEtl42Er85k23zeu3om8H8wbDPgdbQP88zAihVsik6xJfw6VnzUl8fQw==,
+        registry: https://registry.npm.taobao.org/,
+        tarball: https://registry.npmmirror.com/mobx-react-lite/-/mobx-react-lite-4.0.3.tgz,
+      }
+    id: registry.npmmirror.com/mobx-react-lite/4.0.3
+    name: mobx-react-lite
+    version: 4.0.3
+    peerDependencies:
+      mobx: ^6.9.0
+      react: ^16.8.0 || ^17 || ^18
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      mobx: registry.npmmirror.com/mobx/6.9.1
+      react: registry.npmmirror.com/react/18.2.0
+      react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
+      use-sync-external-store: registry.npmmirror.com/use-sync-external-store/1.2.0_react@18.2.0
+    dev: false
+
+  registry.npmmirror.com/mobx/6.9.1:
+    resolution:
+      {
+        integrity: sha512-7V41hvBmzCQg5n/xoZi2qkhREbnF3wHbzbIdR1sLJhVt6yWq2Zq0FlNahEt/RccOmEIjipvBqeQ4mlOEyMhaaA==,
+        registry: https://registry.npm.taobao.org/,
+        tarball: https://registry.npmmirror.com/mobx/-/mobx-6.9.1.tgz,
+      }
+    name: mobx
+    version: 6.9.1
+    dev: false
+
   registry.npmmirror.com/move-concurrently/1.0.1:
     resolution:
       {
@@ -17800,6 +17860,22 @@ packages:
     engines: { node: '>=0.10.0' }
     dependencies:
       prepend-http: registry.npmmirror.com/prepend-http/1.0.4
+    dev: false
+
+  registry.npmmirror.com/use-sync-external-store/1.2.0_react@18.2.0:
+    resolution:
+      {
+        integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==,
+        registry: https://registry.npm.taobao.org/,
+        tarball: https://registry.npmmirror.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz,
+      }
+    id: registry.npmmirror.com/use-sync-external-store/1.2.0
+    name: use-sync-external-store
+    version: 1.2.0
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: registry.npmmirror.com/react/18.2.0
     dev: false
 
   registry.npmmirror.com/util-deprecate/1.0.2:

@@ -1,11 +1,13 @@
 'use client'
 import { Menu as AntdMenu, MenuProps } from 'antd'
 import classNames from 'classnames'
+import { observer } from 'mobx-react-lite'
 import { useRouter } from 'next/navigation'
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useContext, useEffect, useState } from 'react'
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 import { styled } from 'styled-components'
 import useDecodeParams from 'src/hooks/useDecodeParams'
+import { MenuContext } from 'src/store/MenuItems'
 const StyledMenu = styled(AntdMenu)`
   &.ant-menu-root {
     border: none;
@@ -36,7 +38,14 @@ const Menu: FC<MenuProps> = (props) => {
   const { push } = useRouter()
   const { category, slug } = useDecodeParams()
   const [selectedKeys, setSelectedKeys] = useState<Array<string>>([])
+  const menu = useContext(MenuContext)
   const extendFolder = slug.slice(0, slug.lastIndexOf('/'))
+
+  useEffect(() => {
+    if (props.items && props.items?.length > 0) {
+      menu.update(props.items as Menu[])
+    }
+  }, [menu, props.items])
 
   useEffect(() => {
     setSelectedKeys([decodeURIComponent(`docs/${category}/${slug}`)])
@@ -63,4 +72,4 @@ const Menu: FC<MenuProps> = (props) => {
   )
 }
 
-export default Menu
+export default observer(Menu)

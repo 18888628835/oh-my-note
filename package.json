@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@docsearch/react": "3",
+    "@mobx-devtools/tools": "^0.0.4",
     "@types/node": "20.1.0",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
@@ -34,6 +35,8 @@
     "fastdom": "^1.0.11",
     "framer-motion": "^10.12.10",
     "marked": "^5.0.2",
+    "mobx": "^6.9.1",
+    "mobx-react-lite": "^4.0.3",
     "next": "13.4.1",
     "next-auth": "^4.22.1",
     "normalize.css": "^8.0.1",
