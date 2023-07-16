@@ -45,10 +45,10 @@ const Toc: FC<TocProps> = ({ headings }) => {
   }, [])
 
   return (
-    <div className={'hidden xl:block shrink-0 pl-4 w-[256px]'}>
+    <div className={'hidden xl:block shrink-0 pl-4 w-[256px] z-[20]'}>
       <div className="w-full sticky top-[calc(var(--page-header-height)+1rem+var(--doc-margin-top))] pt-[var(--basic-gap)] pb-[var(--basic-gap)] pl-4 border-l border-[var(--basic-border-color)]">
         <div className="mb-1 mt-[7px] text-sm font-medium text-gray-700">On this page</div>
-        <ul className="space-y-2.5 py-2 text-sm overflow-y-auto max-h-[70vh] styled-scrollbar">
+        <ul className="space-y-2.5 py-2 text-sm overflow-y-auto max-h-[70vh]">
           {headings.map(({ text, depth }, index) => (
             <li
               className={depth === 3 ? 'pl-3' : ''}

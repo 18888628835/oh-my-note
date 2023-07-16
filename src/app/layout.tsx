@@ -19,7 +19,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const nav = await getNavigation()
   return (
     <html lang="en">
-      <body>
+      <body className="s:scrollbar-hide">
         <StyledJsxRegistry>
           <Provider>
             <Header nav={nav} />
