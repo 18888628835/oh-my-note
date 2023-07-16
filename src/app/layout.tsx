@@ -5,6 +5,7 @@ import 'src/style/variable.css'
 import 'src/style/reset.css'
 import 'src/style/global.css'
 import { Metadata } from 'next'
+import Container from 'src/app/docs/Container'
 import BackTop from 'src/components/BackTop'
 import Provider from 'src/components/Provider'
 import Header from 'src/components/header'
@@ -19,12 +20,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const nav = await getNavigation()
   return (
     <html lang="en">
-      <body className="s:scrollbar-hide">
+      <body>
         <StyledJsxRegistry>
           <Provider>
-            <Header nav={nav} />
-            {children}
-            <BackTop />
+            <Container>
+              <Header nav={nav} />
+              {children}
+              <BackTop />
+            </Container>
           </Provider>
         </StyledJsxRegistry>
       </body>

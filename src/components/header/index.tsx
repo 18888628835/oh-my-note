@@ -85,7 +85,7 @@ const Header: FC<HeaderProps> = ({ nav }) => {
                   href="/"
                 >
                   <Image className={styles['logo']} width={32} height={32} alt="" src="/logosc-new.svg"></Image>
-                  <b className="xs:block hidden">{AppConfig.brand}</b>
+                  <b className="s:block hidden">{AppConfig.brand}</b>
                 </Link>
                 <div className="hidden md:block">
                   {nav.map(({ title, path }, index) => (

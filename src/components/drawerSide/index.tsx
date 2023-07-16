@@ -45,9 +45,10 @@ const DrawerSide = () => {
   return (
     <div className="drawer-side">
       <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-      <ul className="menu p-4 w-[80%] xs:w-80 bg-white min-h-full">
-        <div className="w-full">
+      <ul className="menu p-4 w-[80%] xs:w-80 bg-white h-[100vh]">
+        <div className="w-full overflow-scroll scrollbar-hide">
           {/* Sidebar content here */}
+
           <div className={classNames(styles['page-header'], 'shadow pb-4')}>
             <Link className={classNames('flex', 'items-center', styles['nav-link'], styles['brand'])} href="/">
               <Image className={styles['logo']} width={32} height={32} alt="" src="/logosc-new.svg"></Image>
@@ -55,11 +56,13 @@ const DrawerSide = () => {
             </Link>
           </div>
           <Div>
-            {AppConfig.navigation?.map(({ title, path }, index) => (
-              <li key={index}>
-                <Link href={path}>{title}</Link>
-              </li>
-            ))}
+            <div>
+              {AppConfig.navigation?.map(({ title, path }, index) => (
+                <li key={index}>
+                  <Link href={path}>{title}</Link>
+                </li>
+              ))}
+            </div>
             <div className="divider">Documentation</div>
             <div>{documentation}</div>
           </Div>
