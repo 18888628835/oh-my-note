@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.1](https://github.com/18888628835/oh-my-note/compare/v1.15.0...v1.15.1) (2023-07-16)
+
+
+### Bug Fixes
+
+* remove injectStores ([8e92ffc](https://github.com/18888628835/oh-my-note/commit/8e92ffc8a1ebf2ff073d7a42bdef88bb23840be9))
+
 ## [1.15.0](https://github.com/18888628835/oh-my-note/compare/v1.14.1...v1.15.0) (2023-07-16)
 
 
