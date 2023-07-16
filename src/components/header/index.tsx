@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import { FC } from 'react'
 import { AiFillCaretDown } from 'react-icons/ai'
+import DrawerSide from 'src/components/drawerSide'
 import styles from 'src/components/header/index.module.scss'
 import Search from 'src/components/search/Search'
 import AppConfig from 'src/config/app'
@@ -59,11 +60,24 @@ const Header: FC<HeaderProps> = ({ nav }) => {
   const dropdownItems = data ? signOutItems : signInItems
   return (
     <header className={classNames(styles['page-header'], styles['page-header-sticky'], 'sm:px-9')}>
-      <div className="drawer drawer-end">
+      <div className="drawer">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
           {/* Navbar */}
           <nav className="w-full navbar">
+            <div className="flex-none md:hidden">
+              <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  className="inline-block w-6 h-6 stroke-current"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </label>
+            </div>
+            {/* logo and nav */}
             <div className="flex-1 px-2 mx-2">
               <div className="md:flex items-center whitespace-nowrap ">
                 <Link
@@ -86,17 +100,18 @@ const Header: FC<HeaderProps> = ({ nav }) => {
                 </div>
               </div>
             </div>
-
+            {/* 登录 */}
             <div className="ml-2">
-              <div className="flex-none hidden lg:block">
-                <div className="flex items-center">
+              <div className="flex-none">
+                <div className="items-center hidden xs:flex">
                   <Dropdown
+                    className=""
                     menu={{
                       items: dropdownItems,
                     }}
                     arrow={false}
                   >
-                    <div className="flex justify-center items-center whitespace-nowrap">
+                    <div className="hidden lg:flex justify-center items-center whitespace-nowrap">
                       {data ? <Avatar size="small" src={data?.user?.image} /> : 'Sign in'}
                       <AiFillCaretDown />
                     </div>
@@ -109,58 +124,12 @@ const Header: FC<HeaderProps> = ({ nav }) => {
                   <Link className={styles['git-hub']} target="_blank" href="https://github.com/18888628835" />
                 </div>
               </div>
+              {/* 搜索 */}
               <Search />
-              <div className="flex-none lg:hidden">
-                <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
-                  <svg width="24" height="24" fill="none" aria-hidden="true">
-                    <path
-                      d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                  </svg>
-                </label>
-              </div>
             </div>
           </nav>
         </div>
-        <div className="drawer-side">
-          <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-[80%] xs:w-80 h-full bg-white">
-            {/* Sidebar content here */}
-            <div className="border-b border-solid border-base-200 pb-2">
-              <Link className={classNames('flex', 'items-center', styles['nav-link'], styles['brand'])} href="/">
-                <Image className={styles['logo']} width={29} height={32} alt="" src="/logosc-new.svg"></Image>
-                <b>{AppConfig.brand}</b>
-              </Link>
-            </div>
-
-            <li>
-              <details open>
-                <summary>Documentation</summary>
-                <ul>
-                  {nav.map(({ title, path }, index) => (
-                    <li key={index}>
-                      <Link href={path}>{title}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </details>
-            </li>
-            <li>
-              <Link target="_blank" href="https://18888628835.github.io/react-drag-resizable/">
-                NPM
-              </Link>
-            </li>
-            <li>
-              <Link target="_blank" href="https://github.com/18888628835">
-                Github
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <DrawerSide />
       </div>
       <motion.div className={styles['progress-bar']} hidden={isScroll === false} style={{ scaleX: scrollYProgress }} />
     </header>
