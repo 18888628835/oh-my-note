@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.0](https://github.com/18888628835/oh-my-note/compare/v1.14.1...v1.15.0) (2023-07-16)
+
+
+### Features
+
+* drawerSide menu ([f228c8d](https://github.com/18888628835/oh-my-note/commit/f228c8d1f44193cee283f78a4a185eafdf1e2f33))
+
 ## [1.14.1](https://github.com/18888628835/oh-my-note/compare/v1.14.0...v1.14.1) (2023-07-05)
 
 
