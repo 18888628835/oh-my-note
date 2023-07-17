@@ -79,7 +79,7 @@ const Header: FC<HeaderProps> = ({ nav }) => {
             </div>
             {/* logo and nav */}
             <div className="flex-1 px-2 mx-2">
-              <div className="md:flex items-center whitespace-nowrap ">
+              <div className="items-center whitespace-nowrap hidden xs:flex">
                 <Link
                   className={classNames('flex', 'items-center', 'justify-center', styles['nav-link'], styles['brand'])}
                   href="/"
@@ -103,25 +103,28 @@ const Header: FC<HeaderProps> = ({ nav }) => {
             {/* 登录 */}
             <div className="ml-2">
               <div className="flex-none">
-                <div className="items-center hidden xs:flex">
+                <div className="items-center flex">
                   <Dropdown
-                    className=""
                     menu={{
                       items: dropdownItems,
                     }}
                     arrow={false}
                   >
-                    <div className="hidden lg:flex justify-center items-center whitespace-nowrap">
+                    <div className="flex justify-center items-center whitespace-nowrap">
                       {data ? <Avatar size="small" src={data?.user?.image} /> : 'Sign in'}
                       <AiFillCaretDown />
                     </div>
                   </Dropdown>
                   <Link
-                    className={styles['npm']}
+                    className={classNames(styles['npm'], 'hidden lg:block')}
                     target="_blank"
                     href="https://18888628835.github.io/react-drag-resizable/"
                   />
-                  <Link className={styles['git-hub']} target="_blank" href="https://github.com/18888628835" />
+                  <Link
+                    className={classNames(styles['git-hub'], 'hidden lg:block')}
+                    target="_blank"
+                    href="https://github.com/18888628835"
+                  />
                 </div>
               </div>
               {/* 搜索 */}
