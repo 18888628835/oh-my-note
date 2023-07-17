@@ -1,21 +1,24 @@
 'use client'
-import { Breadcrumb as AntBreadcrumb } from 'antd'
 import React from 'react'
-import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 
 interface BreadcrumbProps {
   items: Array<string>
 }
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
+  const classNames = {
+    hover: 'text-[#171717]',
+    default: 'text-[#8f8f8f]',
+  }
   return (
-    <AntBreadcrumb
-      separator={
-        <div className="h-full w-full flex items-center">
-          <MdOutlineKeyboardArrowRight />
-        </div>
-      }
-      items={items.map((text) => ({ title: text }))}
-    />
+    <div className="text-sm breadcrumbs">
+      <ul>
+        {items.map((title, index) => (
+          <li key={index}>
+            <span className={index === items.length - 1 ? classNames['hover'] : classNames['default']}>{title}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 

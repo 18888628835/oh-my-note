@@ -1,0 +1,21 @@
+.documentation-menu {
+  :where(li > details > summary)::after {
+    color: currentcolor;
+  }
+
+  li,
+  a,
+  summary,
+  details {
+    max-width: 100%;
+  }
+
+  a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    font-weight: 400;
+    display: block !important;
+  }
+}

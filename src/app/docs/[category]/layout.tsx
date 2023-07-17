@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { notFound } from 'next/navigation'
 import React from 'react'
-import Menu from 'src/components/menu'
+import Menu from 'src/components/menu/index'
 import AppConfig from 'src/config/app'
 import { deleteSuffix, getLabelFromMarkdown, readDir } from 'src/lib/util'
 
@@ -21,9 +21,11 @@ const layout = async ({
     notFound()
   }
   return (
-    <section className="flex min-h-[calc(100vh-var(--page-header-height))]">
-      <aside className="md:w-[--doc-sidebar-width] w-0 hidden md:block">
-        <Menu items={categoryMenu} mode="inline" />
+    <section className="min-h-[calc(100vh-var(--page-header-height))] relative py-10 mx-auto md:flex md:py-10 md:flex-row">
+      <aside className="hidden md:block relative">
+        <div className="styled-scrollbar sticky overflow-y-scroll top-[var(--sticky-top)] h-[calc(100vh-var(--sticky-top))]">
+          <Menu menu={categoryMenu} />
+        </div>
       </aside>
       {children}
     </section>
