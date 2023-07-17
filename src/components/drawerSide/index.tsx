@@ -4,20 +4,11 @@ import { observer } from 'mobx-react-lite'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useContext } from 'react'
-import { styled } from 'styled-components'
+import style from 'src/components/drawerSide/index.module.scss'
 import styles from 'src/components/header/index.module.scss'
 import AppConfig from 'src/config/app'
 import { MenuContext } from 'src/store/MenuItems'
 
-const Div = styled.div`
-  a {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 100%;
-    display: block !important;
-  }
-`
 function generateMenu(items: Menu[]) {
   return items?.map((item) => {
     if (item !== undefined && Array.isArray(item.children) && item.children.length > 0) {
@@ -55,7 +46,7 @@ const DrawerSide = () => {
               <b>{AppConfig.brand}</b>
             </Link>
           </div>
-          <Div>
+          <div className={style['documentation-menu']}>
             <div>
               {AppConfig.navigation?.map(({ title, path }, index) => (
                 <li key={index}>
@@ -65,7 +56,7 @@ const DrawerSide = () => {
             </div>
             <div className="divider">Documentation</div>
             <div>{documentation}</div>
-          </Div>
+          </div>
         </div>
       </ul>
     </div>

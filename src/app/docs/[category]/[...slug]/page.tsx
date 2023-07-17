@@ -26,7 +26,7 @@ const page = async ({ params: { slug, category } }: { params: { slug: string[]; 
     notFound()
   }
   return (
-    <div className="flex-grow w-full lg:max-w-[calc(100%-var(--doc-sidebar-width))] mt-2 md:mt-[var(--doc-margin-top)]">
+    <div className="flex-grow mt-2 md:mt-[var(--doc-margin-top)] max-w-full">
       <div className="flex w-full h-full px-4 s:px-8 sm:px-16">
         <article className="xl:px-4 flex-grow overflow-scroll">
           <div className="mt-4 mb-7 md:mt-2 md:mb-8">
