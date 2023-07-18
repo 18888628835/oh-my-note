@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import { FC } from 'react'
 import { AiFillCaretDown, AiOutlineMore } from 'react-icons/ai'
+import { BsGithub } from 'react-icons/bs'
 import DrawerSide from 'src/components/drawerSide'
 import styles from 'src/components/header/index.module.scss'
 import Search from 'src/components/search/Search'
@@ -120,11 +121,9 @@ const Header: FC<HeaderProps> = ({ nav }) => {
                     target="_blank"
                     href={AppConfig.npm}
                   />
-                  <Link
-                    className={classNames(styles['git-hub'], 'hidden lg:block')}
-                    target="_blank"
-                    href={AppConfig.github}
-                  />
+                  <Link className="text-xl hidden lg:block" target="_blank" href={AppConfig.github}>
+                    <BsGithub />
+                  </Link>
                 </div>
               </div>
               {/* 搜索 */}
@@ -138,12 +137,9 @@ const Header: FC<HeaderProps> = ({ nav }) => {
                     <Link className={classNames(styles['npm'])} target="_blank" href={AppConfig.npm} />
                   </li>
                   <li className="flex">
-                    <Link
-                      key="git-hub"
-                      className={classNames(styles['git-hub'])}
-                      target="_blank"
-                      href={AppConfig.github}
-                    />
+                    <Link key="git-hub" className="text-xl" target="_blank" href={AppConfig.github}>
+                      <BsGithub />
+                    </Link>
                   </li>
                 </ul>
               </div>
