@@ -18,7 +18,7 @@ function generateMenu(items: Menu[]) {
 
     return (
       <li key={item.key}>
-        <Link href={item.key}>{item.label}</Link>
+        <Link href={'/' + item.key}>{item.label}</Link>
       </li>
     )
   })
