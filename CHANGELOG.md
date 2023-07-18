@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.0](https://github.com/18888628835/oh-my-note/compare/v1.15.1...v1.16.0) (2023-07-18)
+
+
+### Features
+
+* search via algolia ([3fe7005](https://github.com/18888628835/oh-my-note/commit/3fe7005914e19b2b16c1ab0f9f54ad2a82733425))
+
 ## [1.15.1](https://github.com/18888628835/oh-my-note/compare/v1.15.0...v1.15.1) (2023-07-16)
 
 
