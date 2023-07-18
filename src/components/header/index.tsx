@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import { FC } from 'react'
-import { AiFillCaretDown } from 'react-icons/ai'
+import { AiFillCaretDown, AiOutlineMore } from 'react-icons/ai'
 import DrawerSide from 'src/components/drawerSide'
 import styles from 'src/components/header/index.module.scss'
 import Search from 'src/components/search/Search'
@@ -116,19 +116,37 @@ const Header: FC<HeaderProps> = ({ nav }) => {
                     </div>
                   </Dropdown>
                   <Link
-                    className={classNames(styles['npm'], 'hidden lg:block')}
+                    className={classNames(styles['npm'], 'mt-1 mx-2 hidden lg:block')}
                     target="_blank"
-                    href="https://18888628835.github.io/react-drag-resizable/"
+                    href={AppConfig.npm}
                   />
                   <Link
                     className={classNames(styles['git-hub'], 'hidden lg:block')}
                     target="_blank"
-                    href="https://github.com/18888628835"
+                    href={AppConfig.github}
                   />
                 </div>
               </div>
               {/* 搜索 */}
               <Search />
+              <div className="dropdown dropdown-bottom dropdown-end flex lg:hidden max-h-full">
+                <label tabIndex={0} className="m-1 btn-circle btn-xs text-center">
+                  <AiOutlineMore className="text-2xl" />
+                </label>
+                <ul tabIndex={0} className="dropdown-content grid gap-2 p-3 z-[1] shadow bg-base-100 rounded-md">
+                  <li className="flex">
+                    <Link className={classNames(styles['npm'])} target="_blank" href={AppConfig.npm} />
+                  </li>
+                  <li className="flex">
+                    <Link
+                      key="git-hub"
+                      className={classNames(styles['git-hub'])}
+                      target="_blank"
+                      href={AppConfig.github}
+                    />
+                  </li>
+                </ul>
+              </div>
             </div>
           </nav>
         </div>

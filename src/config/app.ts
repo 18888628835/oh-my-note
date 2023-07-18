@@ -11,5 +11,7 @@ const AppConfig = {
   ],
   docsPath: 'docs',
   suffix: '.md',
+  github: 'https://github.com/18888628835',
+  npm: 'https://18888628835.github.io/react-drag-resizable/',
 }
 export default AppConfig

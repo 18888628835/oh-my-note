@@ -54,8 +54,14 @@ const DrawerSide = () => {
                 </li>
               ))}
             </div>
-            <div className="divider">Documentation</div>
+            <div className="divider" />
             <div>{documentation}</div>
+            <li>
+              <Link href={AppConfig.github}>GitHub</Link>
+            </li>
+            <li>
+              <Link href={AppConfig.npm}>NPM</Link>
+            </li>
           </div>
         </div>
       </ul>
