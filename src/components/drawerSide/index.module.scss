@@ -7,4 +7,18 @@
     font-weight: 400;
     display: block !important;
   }
+
+  @media (prefers-color-scheme: dark) {
+    a {
+      color: var(--dark-menu-font-color);
+
+      &:focus {
+        color: var(--color-for-hover-link);
+      }
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
 }

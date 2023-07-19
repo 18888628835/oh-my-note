@@ -26,7 +26,10 @@ const Header: FC<HeaderProps> = ({ nav }) => {
     {
       key: '1',
       label: (
-        <div className={classNames('flex-center-box', styles['gap-8'], styles['nav-link'])} onClick={() => signOut()}>
+        <div
+          className={classNames('flex-center-box dark:text-white', styles['gap-8'], styles['nav-link'])}
+          onClick={() => signOut()}
+        >
           Sign out
         </div>
       ),
@@ -37,10 +40,10 @@ const Header: FC<HeaderProps> = ({ nav }) => {
       key: '1',
       label: (
         <div
-          className={classNames('flex-center-box', styles['gap-8'], styles['nav-link'])}
+          className={classNames('flex-center-box dark:text-white', styles['gap-8'], styles['nav-link'])}
           onClick={() => signIn('github')}
         >
-          <Image width={24} height={24} src="/github.svg" alt="" />
+          <BsGithub className="text-2xl" />
           Sign in with github
         </div>
       ),
@@ -49,7 +52,7 @@ const Header: FC<HeaderProps> = ({ nav }) => {
       key: '2',
       label: (
         <div
-          className={classNames('flex-center-box', styles['gap-8'], styles['nav-link'])}
+          className={classNames('flex-center-box dark:text-white', styles['gap-8'], styles['nav-link'])}
           onClick={() => signIn('google')}
         >
           <Image width={24} height={24} src="/google.svg" alt="" />
@@ -60,7 +63,13 @@ const Header: FC<HeaderProps> = ({ nav }) => {
   ]
   const dropdownItems = data ? signOutItems : signInItems
   return (
-    <header className={classNames(styles['page-header'], styles['page-header-sticky'], 'sm:px-9')}>
+    <header
+      className={classNames(
+        styles['page-header'],
+        styles['page-header-sticky'],
+        'sm:px-9 dark:bg-[var(--dark-bg-color)] bg-[var(--page-header-background)]',
+      )}
+    >
       <div className="drawer">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
@@ -132,7 +141,10 @@ const Header: FC<HeaderProps> = ({ nav }) => {
                 <label tabIndex={0} className="m-1 btn-circle btn-xs text-center">
                   <AiOutlineMore className="text-2xl" />
                 </label>
-                <ul tabIndex={0} className="dropdown-content grid gap-2 p-3 z-[1] shadow bg-base-100 rounded-md">
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content dark:bg-slate-800 grid gap-2 p-3 z-[1] shadow bg-base-100 rounded-md"
+                >
                   <li className="flex">
                     <Link className={classNames(styles['npm'])} target="_blank" href={AppConfig.npm} />
                   </li>

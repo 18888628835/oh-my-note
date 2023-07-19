@@ -100,7 +100,7 @@
 
 .markdown-body a {
   background-color: transparent;
-  color: var(--color-accent-fg);
+  color: currentcolor;
   text-decoration: none;
 }
 

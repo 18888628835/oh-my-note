@@ -5,7 +5,6 @@ import { styled } from 'styled-components'
 
 const A = styled.a`
   &[data-role='hash-link'] {
-    color: var(--basic-font-color);
     &:hover {
       text-decoration: none;
       color: var(--color-for-hover-link);
@@ -31,7 +30,7 @@ const HeadingHashLink: FC<{ level: number; id: string } & React.AnchorHTMLAttrib
 
   return (
     <HeadingTag id={id}>
-      <A id={id} data-role="hash-link" {...restProps}>
+      <A id={id} className="dark:text-white text-[var(--basic-font-color)]" data-role="hash-link" {...restProps}>
         {children}
         <BsLink45Deg className="inline-block" />
       </A>

@@ -36,3 +36,10 @@ img {
   display: block;
   clear: both;
 }
+
+@media (prefers-color-scheme: dark) {
+  .ant-dropdown-menu {
+    background-color: rgb(30 41 59) !important;
+    color: white;
+  }
+}

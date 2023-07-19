@@ -1,3 +1,9 @@
+# Todo
+
+1. website search
+2. website auto dark mode
+3.
+
 # Getting Started
 
 if you want to render react-component in `codeSandbox`

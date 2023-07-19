@@ -36,7 +36,7 @@ const DrawerSide = () => {
   return (
     <div className="drawer-side">
       <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-      <ul className="menu p-4 w-[80%] xs:w-80 bg-white h-[100vh]">
+      <ul className="menu p-4 w-[80%] xs:w-80 bg-white dark:bg-slate-800 h-[100vh]">
         <div className="w-full overflow-scroll scrollbar-hide">
           {/* Sidebar content here */}
 
@@ -54,7 +54,7 @@ const DrawerSide = () => {
                 </li>
               ))}
             </div>
-            <div className="divider" />
+            <div className="h-[1px] bg-slate-200 my-4" />
             <div>{documentation}</div>
             <li>
               <Link href={AppConfig.github}>GitHub</Link>

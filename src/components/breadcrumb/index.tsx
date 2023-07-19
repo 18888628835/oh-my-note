@@ -6,8 +6,8 @@ interface BreadcrumbProps {
 }
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
   const classNames = {
-    hover: 'text-[#171717]',
-    default: 'text-[#8f8f8f]',
+    hover: 'text-[#171717] dark:text-[var(--dark-toc-hover-font-color)]',
+    default: 'text-[#8f8f8f] dark:text-[var(--dark-toc-font-color)]',
   }
   return (
     <div className="text-sm breadcrumbs">

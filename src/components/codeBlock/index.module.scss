@@ -6,7 +6,6 @@
 }
 
 .copy-wrap {
-  background-color: var(--basic-background);
   padding: var(--padding-for-copy-header);
   border-bottom: 1px solid var(--basic-border-color);
   border-top-left-radius: var(--border-radius-6);
@@ -21,8 +20,4 @@
   font-size: var(--font-size-18);
   transition: all 0.2s;
   cursor: pointer;
-
-  &:hover {
-    background-color: var(--color-btn-hover-background);
-  }
 }

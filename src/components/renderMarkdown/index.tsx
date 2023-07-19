@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { FC } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { Prism } from 'react-syntax-highlighter'
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { useMedia } from 'react-use'
 import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
 import { styled } from 'styled-components'
@@ -15,13 +17,15 @@ interface RenderMarkdownProps {
   data: string
 }
 const SyntaxHighlighter = styled(Prism)`
-  background: none !important;
+  background: inherit !important;
   code {
     white-space: break-spaces !important;
   }
 `
 
 const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
+  const isDarkMode = useMedia('(prefers-color-scheme: dark)', true)
+
   return (
     <div style={{ position: 'relative' }}>
       <ReactMarkdown
@@ -37,7 +41,12 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
               <CodeBlock
                 {...{ code, mode, language }}
                 renderHighlighter={
-                  <SyntaxHighlighter {...props} language={language.toLocaleLowerCase()}>
+                  <SyntaxHighlighter
+                    showLineNumbers
+                    {...props}
+                    language={language.toLocaleLowerCase()}
+                    style={isDarkMode ? vscDarkPlus : undefined}
+                  >
                     {code}
                   </SyntaxHighlighter>
                 }
@@ -80,7 +89,7 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
             return <a {...{ href, children, ...restProps }} />
           },
         }}
-        className="markdown-body"
+        className="markdown-body dark:text-white dark:bg-[var(--dark-bg-color)]"
         rehypePlugins={[rehypeRaw]}
         remarkPlugins={[remarkGfm]}
       >

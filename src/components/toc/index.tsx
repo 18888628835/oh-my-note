@@ -12,8 +12,8 @@ const Toc: FC<TocProps> = ({ headings }) => {
     classNames('block leading-[1.6] text-ellipsis whitespace-nowrap overflow-x-hidden', {
       'font-medium': index === activeIndex,
       'text-[var(--color-for-hover-link)]': index === activeIndex,
-      'hover:text-gray-600': index !== activeIndex,
-      'text-gray-500': index !== activeIndex,
+      'hover:text-gray-600 dark:hover:text-[var(--dark-toc-hover-font-color)]': index !== activeIndex,
+      'text-gray-500 dark:text-[var(--dark-toc-font-color)]': index !== activeIndex,
     })
   useEffect(() => {
     const h2Elements = document.querySelectorAll('h2[id]')
@@ -47,7 +47,7 @@ const Toc: FC<TocProps> = ({ headings }) => {
   return (
     <div className={'hidden xl:block shrink-0 pl-4 w-[256px]'}>
       <div className="w-full sticky top-[var(--sticky-top)] pb-[var(--basic-gap)] pl-4 border-l border-[var(--basic-border-color)]">
-        <div className="mb-1 mt-[7px] text-sm font-medium text-gray-700">On this page</div>
+        <div className="mb-1 mt-[7px] text-sm font-medium text-gray-700 dark:text-white">On this page</div>
         <ul className="space-y-2.5 py-2 text-sm overflow-y-auto max-h-[70vh]">
           {headings.map(({ text, depth }, index) => (
             <li

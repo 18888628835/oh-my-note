@@ -38,22 +38,33 @@ const CodeBlock: FC<PropsWithChildren<CopyProps>> = ({ language, code, renderHig
   }
   const toggleShowCode = () => setShowCode((oldStatus) => !oldStatus)
   return (
-    <div className={styles['root-container']}>
-      <div className={classNames(styles['copy-wrap'], 'flex-space-between-box')}>
+    <div className={classNames('dark:bg-[var(--dark-code-block-bg-color)]', styles['root-container'])}>
+      <div
+        className={classNames(
+          styles['copy-wrap'],
+          'flex-space-between-box bg-[var(--basic-background)] dark:bg-[var(--dark-code-block-header-bg-color)]',
+        )}
+      >
         <div className={styles['language']}>{language}</div>
         <div className="flex gap-1">
           {['js', 'javascript'].includes(language.toLocaleLowerCase()) && (
             <Tooltip title="执行代码">
               <button
                 onClick={() => executeJS(code)}
-                className={classNames('flex items-center justify-center', styles['copy-btn'])}
+                className={classNames(
+                  'flex items-center justify-center :hover:bg-[var(--color-btn-hover-background)] dark:hover:bg-[var(--ds-gray-200)]',
+                  styles['copy-btn'],
+                )}
               >
                 <VscDebugStart />
               </button>
             </Tooltip>
           )}
           <Tooltip title="复制代码">
-            <button onClick={onCopy} className={classNames('flex-center-box', styles['copy-btn'])}>
+            <button
+              onClick={onCopy}
+              className={classNames('flex-center-box dark:hover:bg-[var(--ds-gray-200)]', styles['copy-btn'])}
+            >
               {!copied ? (
                 <MdOutlineContentCopy className={classNames('animate__animated', 'animate__zoomIn')} />
               ) : (
