@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.1](https://github.com/18888628835/oh-my-note/compare/v1.16.0...v1.16.1) (2023-07-19)
+
+
+### Bug Fixes
+
+* correct href ([653aa93](https://github.com/18888628835/oh-my-note/commit/653aa93d2edc292027adaa592620e61009744410))
+
 ## [1.16.0](https://github.com/18888628835/oh-my-note/compare/v1.15.1...v1.16.0) (2023-07-18)
 
 
