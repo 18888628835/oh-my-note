@@ -1,6 +1,7 @@
 'use client'
 import classNames from 'classnames'
-import { FC, useEffect, useState } from 'react'
+import { FC, useState } from 'react'
+import { useEvent } from 'react-use'
 
 interface TocProps {
   headings: { text: string; depth: number }[]
@@ -15,7 +16,7 @@ const Toc: FC<TocProps> = ({ headings }) => {
       'hover:text-gray-600 dark:hover:text-[var(--dark-toc-hover-font-color)]': index !== activeIndex,
       'text-gray-500 dark:text-[var(--dark-toc-font-color)]': index !== activeIndex,
     })
-  useEffect(() => {
+  function setActiveElement() {
     const h2Elements = document.querySelectorAll('h2[id]')
     const h3Elements = document.querySelectorAll('h3[id]')
     const hElements = [...h2Elements, ...h3Elements]
@@ -25,24 +26,19 @@ const Toc: FC<TocProps> = ({ headings }) => {
     // markdown content 高度
     // 60 为 header 的高度 + 16 padding = 76
     const contentHeight = viewHeight - 76
-    function setActiveTocElement() {
-      // 遍历每个h2/h3元素
-      for (const hElement of hElements) {
-        const hTop = hElement.getBoundingClientRect().top
-        // 如果h2/h3元素距离页面顶部的距离大于76且小于markdown content高度的一半
-        if (hTop >= 0 && hTop <= contentHeight / 2) {
-          const index = tocElements.findIndex((tocElement) => tocElement.dataset.id === hElement.id)
-          setActiveIndex(index)
-          return
-        }
+    // 遍历每个h2/h3元素
+    for (const hElement of hElements) {
+      const hTop = hElement.getBoundingClientRect().top
+      // 如果h2/h3元素距离页面顶部的距离大于76且小于markdown content高度的一半
+      if (hTop >= 0 && hTop <= contentHeight / 2) {
+        const index = tocElements.findIndex((tocElement) => tocElement.dataset.id === hElement.id)
+        setActiveIndex(index)
+        return
       }
     }
-    // 监听页面滚动事件
-    window.addEventListener('scroll', setActiveTocElement)
-    return () => {
-      window.removeEventListener('scroll', setActiveTocElement)
-    }
-  }, [])
+  }
+
+  useEvent('scroll', setActiveElement, window)
 
   return (
     <div className={'hidden xl:block shrink-0 pl-4 w-[256px]'}>

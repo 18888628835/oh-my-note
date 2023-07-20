@@ -1,17 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
 import Link from 'next/link'
-import { FC } from 'react'
+import { FC, useContext } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { Prism } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import { useMedia } from 'react-use'
 import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
 import { styled } from 'styled-components'
 import CodeBlock from 'src/components/codeBlock'
 import HeadingHashLink from 'src/components/hashLink'
 import { getChildrenId } from 'src/lib/md-utils'
+import { EnvContext } from 'src/store/env'
 
 interface RenderMarkdownProps {
   data: string
@@ -24,8 +24,7 @@ const SyntaxHighlighter = styled(Prism)`
 `
 
 const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
-  const isDarkMode = useMedia('(prefers-color-scheme: dark)', true)
-
+  const { darkMode } = useContext(EnvContext)
   return (
     <div style={{ position: 'relative' }}>
       <ReactMarkdown
@@ -34,8 +33,8 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
             const match = /language-(\w+)/.exec(className || '')
             const code = String(children).replace(/\n$/, '')
             const language = match ? match[1] : ''
-            const mode = (['codesandbox', 'preview'] as Array<CodeblockMode>).find((item) =>
-              match?.['input']?.toLocaleLowerCase()?.includes(item),
+            const mode = (['codeSandbox', 'preview'] as Array<CodeblockMode>).find((item) =>
+              match?.['input']?.toLocaleLowerCase()?.includes(item.toLocaleLowerCase()),
             )
             return !inline && match ? (
               <CodeBlock
@@ -45,7 +44,7 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
                     showLineNumbers
                     {...props}
                     language={language.toLocaleLowerCase()}
-                    style={isDarkMode ? vscDarkPlus : undefined}
+                    style={darkMode ? vscDarkPlus : undefined}
                   >
                     {code}
                   </SyntaxHighlighter>

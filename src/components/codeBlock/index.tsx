@@ -78,7 +78,7 @@ const CodeBlock: FC<PropsWithChildren<CopyProps>> = ({ language, code, renderHig
         <Root.div className="px-2 py-2 w-full max-h-[500px] overflow-scroll flex justify-center items-center">
           <div dangerouslySetInnerHTML={{ __html: code }} />
         </Root.div>
-      ) : mode === 'codesandbox' ? (
+      ) : mode === 'codeSandbox' ? (
         <div className="px-2 py-2 w-full h-[500px]">
           <iframe
             className="w-full h-full"

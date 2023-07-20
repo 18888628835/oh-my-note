@@ -1,34 +1,10 @@
-# TodoList
-
-~~**全站文档搜索**~~
-
-~~**移动端适配**~~
-
-~~**深色模式适配**~~
-
-~~**markdown 文件路由**~~
-
-~~**Toc 导航**~~
-
-~~**Menu 导航解析**~~
-
-~~**Markdown 文件内容渲染**~~
-
-~~**代码块拷贝 显示 执行**~~
-
-~~**接入 Codesandbox**~~
-
-~~**Oauth 登陆**~~
-
-~~**404 提示**~~
-
-**评论功能**
-
 # Getting Started
+
+## codeblock usage
 
 if you want to render react-component in `codeSandbox`
 
-you can use `jsx-codeSandbox` or `tsx-codeSandbox`
+you can use `jsx-codeSandbox` or `tsx-codeSandbox` as codeblock language.
 
 for example:
 
@@ -46,7 +22,7 @@ export default function App() {
 }
 ```
 
-if you just want to render HTML,you can use `html-preview`
+if you just wanna render Element,you can use `html-preview`
 
 for example
 
@@ -87,11 +63,39 @@ for example
 </div>
 ```
 
-if you just want to execute javascript,you can use `js` or `javascript`.for example
+or you wanna execute javascript,you can use `js` or `javascript` .for example
 
 ```js
 alert('this is a example')
 ```
+
+## TodoList
+
+~~**全站文档搜索**~~
+
+~~**移动端适配**~~
+
+~~**深色模式适配**~~
+
+~~**markdown 文件路由**~~
+
+~~**Toc 导航**~~
+
+~~**Menu 导航解析**~~
+
+~~**Markdown 文件内容渲染**~~
+
+~~**代码块拷贝 显示 执行**~~
+
+~~**接入 Codesandbox**~~
+
+~~**Oauth 登陆**~~
+
+~~**404 提示**~~
+
+**ChangeLog**
+
+**评论功能**
 
 ## Deploy on Vercel
 

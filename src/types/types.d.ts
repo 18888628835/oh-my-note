@@ -4,4 +4,4 @@ interface Menu {
   children: undefined | Array<Menu>
 }
 
-type CodeblockMode = 'codesandbox' | 'preview'
+type CodeblockMode = 'codeSandbox' | 'preview'

@@ -1,12 +1,14 @@
 'use client'
 import { SessionProvider } from 'next-auth/react'
 import { PropsWithChildren, FC } from 'react'
-import { menuItems, MenuContext } from 'src/store/MenuItems'
+import { useMedia } from 'react-use'
+import { EnvContext } from 'src/store/env'
 
 const Provider: FC<PropsWithChildren> = ({ children }) => {
+  const isDarkMode = useMedia('(prefers-color-scheme: dark)', true)
   return (
     <SessionProvider>
-      <MenuContext.Provider value={menuItems}>{children}</MenuContext.Provider>
+      <EnvContext.Provider value={{ darkMode: isDarkMode }}>{children}</EnvContext.Provider>
     </SessionProvider>
   )
 }
