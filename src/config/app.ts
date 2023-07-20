@@ -8,6 +8,7 @@ const AppConfig = {
     { title: 'Thinking', path: '/docs/Thinking/如何做前端性能优化/-1' },
     { title: 'Collaborate', path: '/docs/collaborate/commit' },
     { title: 'Practice', path: '/docs/Practice/Jest实践/1' },
+    { title: 'CHANGELOG', path: '/change-log' },
   ],
   docsPath: 'docs',
   suffix: '.md',

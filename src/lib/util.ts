@@ -36,8 +36,9 @@ export function readDir(entry: string) {
   return fs.readdirSync(entry).filter((file) => (file === '.DS_Store' ? false : true))
 }
 
-export function getREADME() {
-  const readmePath = path.join(process.cwd(), 'README.md')
-  const markdown = fs.readFileSync(readmePath, 'utf-8')
-  return markdown
+export async function getPostContent(paths: string[]) {
+  const fullPath = path.join(process.cwd(), ...paths) + AppConfig.suffix
+  const fileContent = fs.readFileSync(fullPath, 'utf-8')
+
+  return fileContent
 }

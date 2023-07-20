@@ -67,7 +67,7 @@ const Header: FC<HeaderProps> = ({ nav }) => {
       className={classNames(
         styles['page-header'],
         styles['page-header-sticky'],
-        'sm:px-9 dark:bg-[var(--dark-bg-color)] bg-[var(--page-header-background)]',
+        'sm:px-7 md:px-8 lg:px-9 dark:bg-[var(--dark-bg-color)] bg-[var(--page-header-background)]',
       )}
     >
       <div className="drawer">
@@ -88,7 +88,7 @@ const Header: FC<HeaderProps> = ({ nav }) => {
               </label>
             </div>
             {/* logo and nav */}
-            <div className="flex-1 px-2 mx-2">
+            <div className="flex-1 pl-2 ml-2">
               <div className="items-center whitespace-nowrap hidden xs:flex">
                 <Link
                   className={classNames('flex', 'items-center', 'justify-center', styles['nav-link'], styles['brand'])}

@@ -40,7 +40,7 @@ const DrawerSide = () => {
         <div className="w-full overflow-scroll scrollbar-hide">
           {/* Sidebar content here */}
 
-          <div className={classNames(styles['page-header'], 'shadow pb-4')}>
+          <div className={classNames(styles['page-header'], 'shadow pb-4 dark:bg-slate-800')}>
             <Link className={classNames('flex', 'items-center', styles['nav-link'], styles['brand'])} href="/">
               <Image className={styles['logo']} width={32} height={32} alt="" src="/logosc-new.svg"></Image>
               <b>{AppConfig.brand}</b>
@@ -54,7 +54,7 @@ const DrawerSide = () => {
                 </li>
               ))}
             </div>
-            <div className="h-[1px] bg-slate-200 my-4" />
+            <div className="h-[1px] bg-slate-200 my-4"></div>
             <div>{documentation}</div>
             <li>
               <Link href={AppConfig.github}>GitHub</Link>
