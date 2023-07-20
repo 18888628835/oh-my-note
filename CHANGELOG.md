@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.2](https://github.com/18888628835/oh-my-note/compare/v1.16.1...v1.16.2) (2023-07-20)
+
+
+### Bug Fixes
+
+* keep scroll events work when switching to dark mode ([4e1fb8f](https://github.com/18888628835/oh-my-note/commit/4e1fb8fe8c1ac7f174d6fe0c9d7eece3a4764c15))
+
 ## [1.16.1](https://github.com/18888628835/oh-my-note/compare/v1.16.0...v1.16.1) (2023-07-19)
 
 
