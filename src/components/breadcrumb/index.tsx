@@ -10,7 +10,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
     default: 'text-[#8f8f8f] dark:text-[var(--dark-toc-font-color)]',
   }
   return (
-    <div className="text-sm breadcrumbs">
+    <div className="text-sm breadcrumbs pt-0">
       <ul>
         {items.map((title, index) => (
           <li key={index}>

@@ -29,16 +29,16 @@
   --doc-sidebar-width: 272px;
   --basic-spacing: 1rem;
   --doc-margin-top: 2.5rem;
-  --sticky-top: calc(var(--page-header-height) + 0.75rem + var(--doc-margin-top));
-  --dark-bg-color:rgb(15 23 42);
-  --dark-font-color:white;
-  --dark-toc-font-color:hsl(0deg 0% 100% / 82%);
-  --dark-toc-active-font-color:white;
-  --dark-toc-hover-font-color:white;
-  --dark-menu-font-color:hsl(0deg 0% 100% / 82%);
-  --dark-menu-hover-color:white;
-  --menu-active-color:#289ef9;
-  --dark-code-block-bg-color:#0a0a0a;
-  --dark-code-block-header-bg-color:#000;
-  --ds-gray-200:#1f1f1f;
+  --sticky-top: calc(var(--page-header-height) + 0.35rem + var(--doc-margin-top));
+  --dark-bg-color: rgb(15 23 42);
+  --dark-font-color: white;
+  --dark-toc-font-color: hsl(0deg 0% 100% / 82%);
+  --dark-toc-active-font-color: white;
+  --dark-toc-hover-font-color: white;
+  --dark-menu-font-color: hsl(0deg 0% 100% / 82%);
+  --dark-menu-hover-color: white;
+  --menu-active-color: #289ef9;
+  --dark-code-block-bg-color: #0a0a0a;
+  --dark-code-block-header-bg-color: #000;
+  --ds-gray-200: #1f1f1f;
 }

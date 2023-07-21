@@ -10,7 +10,7 @@ function generateMenu(items: Menu[]) {
         <li key={item.key}>
           <details>
             <summary className="dark:hover:text-white dark:text-[var(--dark-menu-font-color)]">{item.label}</summary>
-            <ul>{generateMenu(item.children)}</ul>
+            <ul className="ml-6 dark:before:bg-gray-600">{generateMenu(item.children)}</ul>
           </details>
         </li>
       )
@@ -25,17 +25,12 @@ function generateMenu(items: Menu[]) {
     )
   })
 }
-const Menu = ({ menu }: { menu: Menu[] }) => {
+const MenuList = ({ menu }: { menu: Menu[] }) => {
   return (
-    <ul
-      className={classNames(
-        'menu pt-1 md:w-[--doc-sidebar-width] xs:w-80 overflow-y-auto',
-        styles['documentation-menu'],
-      )}
-    >
+    <ul className={classNames('menu pt-1 px-0  overflow-y-auto', styles['documentation-menu'])}>
       {generateMenu(menu)}
     </ul>
   )
 }
 
-export default Menu
+export default MenuList

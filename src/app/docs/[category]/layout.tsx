@@ -2,6 +2,8 @@ import fs from 'fs'
 import path from 'path'
 import { notFound } from 'next/navigation'
 import React from 'react'
+import { FiBox } from 'react-icons/fi'
+import CollapseNav from 'src/components/collapseNav'
 import Menu from 'src/components/menu/index'
 import AppConfig from 'src/config/app'
 import { deleteSuffix, getLabelFromMarkdown, readDir } from 'src/lib/util'
@@ -21,13 +23,18 @@ const layout = async ({
     notFound()
   }
   return (
-    <section className="min-h-[calc(100vh-var(--page-header-height))] relative py-10 mx-auto md:flex md:py-10 md:flex-row">
-      <aside className="hidden md:block relative">
-        <div className="styled-scrollbar sticky overflow-y-scroll top-[var(--sticky-top)] h-[calc(100vh-var(--sticky-top))]">
+    <section className="min-h-[calc(100vh-var(--page-header-height))] relative sm:py-10 mx-auto sm:flex sm:flex-row">
+      <aside className="hidden sm:block relative">
+        <div className="styled-scrollbar sticky overflow-y-scroll top-[var(--sticky-top)] h-[calc(100vh-var(--sticky-top))]  pr-2 w-[284px]">
+          <span className="flex items-center gap-2 text-lg mb-2">
+            <FiBox />
+            Documentation
+          </span>
           <Menu menu={categoryMenu} />
         </div>
       </aside>
-      {children}
+      <CollapseNav menu={categoryMenu} />
+      <div className="z-10 flex-grow flex px-4 md:px-6">{children}</div>
     </section>
   )
 }

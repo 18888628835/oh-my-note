@@ -24,18 +24,16 @@ const page = async ({ params: { slug, category } }: { params: { slug: string[]; 
     notFound()
   }
   return (
-    <div className="relative max-w-full">
-      <div className="flex w-full h-full px-4 s:px-8 sm:px-16">
-        <article className="xl:px-4 flex-grow overflow-scroll">
-          <div className="mt-4 mb-7 md:mt-2 md:mb-8">
-            <Breadcrumb items={breadcrumbItems} />
-          </div>
-          <AnimateImageProvider>
-            <RenderMarkdown data={postContent} />
-          </AnimateImageProvider>
-        </article>
-        <Toc headings={headings} />
-      </div>
+    <div className="flex w-full h-full">
+      <article className="xl:px-4 overflow-x-hidden">
+        <div className="mt-4 mb-7 sm:mt-2 md:mb-8">
+          <Breadcrumb items={breadcrumbItems} />
+        </div>
+        <AnimateImageProvider>
+          <RenderMarkdown data={postContent} />
+        </AnimateImageProvider>
+      </article>
+      <Toc headings={headings} />
     </div>
   )
 }
