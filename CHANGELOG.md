@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.0](https://github.com/18888628835/oh-my-note/compare/v1.16.2...v1.17.0) (2023-07-21)
+
+
+### Features
+
+* collapseNav ([a42d2b2](https://github.com/18888628835/oh-my-note/commit/a42d2b249d4cc70e94a59adf68cd97d519dca72a))
+
 ## [1.16.2](https://github.com/18888628835/oh-my-note/compare/v1.16.1...v1.16.2) (2023-07-20)
 
 
