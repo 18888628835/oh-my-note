@@ -76,7 +76,10 @@ const Header: FC<HeaderProps> = ({ nav }) => {
           {/* Navbar */}
           <nav className="w-full navbar">
             <div className="flex-none md:hidden">
-              <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
+              <label
+                htmlFor="my-drawer-3"
+                className="btn btn-square btn-ghost hover:bg-[var(--color-btn-hover-background)] dark:hover:bg-[var(--dark-btn-hover-bg-color)]"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

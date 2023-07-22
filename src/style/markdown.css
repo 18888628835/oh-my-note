@@ -44,11 +44,16 @@
   --color-accent-emphasis: #0969da;
   --color-attention-subtle: #fff8c5;
   --color-danger-fg: #cf222e;
+  --color-thead-bg: #fafafa;
 }
 
 @media (prefers-color-scheme: dark) {
   .markdown-body {
     --color-border-muted: #64748b4d;
+    --color-canvas-subtle: var(--dark-code-block-bg-color);
+    --color-border-default: var(--basic-border-color);
+    --color-canvas-default: var(--dark-code-block-bg-color);
+    --color-thead-bg: var(--dark-code-block-header-bg-color);
   }
 }
 
@@ -641,6 +646,10 @@
 
 .markdown-body table tr:nth-child(2n) {
   background-color: var(--color-canvas-subtle);
+}
+
+.markdown-body table thead tr {
+  background-color: var(--color-thead-bg);
 }
 
 .markdown-body table img {

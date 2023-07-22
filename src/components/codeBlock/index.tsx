@@ -52,7 +52,7 @@ const CodeBlock: FC<PropsWithChildren<CopyProps>> = ({ language, code, renderHig
               <button
                 onClick={() => executeJS(code)}
                 className={classNames(
-                  'flex items-center justify-center :hover:bg-[var(--color-btn-hover-background)] dark:hover:bg-[var(--dark-btn-hover-bg-color)] dark:hover:text-[var(--dark-btn-hover-color)]',
+                  'flex items-center justify-center dark:hover:bg-[var(--dark-btn-hover-bg-color)] dark:hover:text-[var(--dark-btn-hover-color)] hover:bg-[var(--color-btn-hover-background)]',
                   styles['copy-btn'],
                 )}
               >
@@ -64,7 +64,7 @@ const CodeBlock: FC<PropsWithChildren<CopyProps>> = ({ language, code, renderHig
             <button
               onClick={onCopy}
               className={classNames(
-                'flex-center-box dark:hover:bg-[var(--dark-btn-hover-bg-color)] dark:hover:text-[var(--dark-btn-hover-color)]',
+                'flex-center-box dark:hover:bg-[var(--dark-btn-hover-bg-color)] dark:hover:text-[var(--dark-btn-hover-color)] hover:bg-[var(--color-btn-hover-background)]',
                 styles['copy-btn'],
               )}
             >
