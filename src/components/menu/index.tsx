@@ -10,7 +10,7 @@ function generateMenu(items: Menu[]) {
         <li key={item.key}>
           <details>
             <summary className="dark:hover:text-white dark:text-[var(--dark-menu-font-color)]">{item.label}</summary>
-            <ul className="ml-6 dark:before:bg-gray-600">{generateMenu(item.children)}</ul>
+            <ul className="ml-6 dark:before:bg-[var(--header-shadow-color)]">{generateMenu(item.children)}</ul>
           </details>
         </li>
       )

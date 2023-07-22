@@ -54,7 +54,7 @@ const DrawerSide = () => {
                 </li>
               ))}
             </div>
-            <div className="h-[1px] bg-slate-200 my-4"></div>
+            <div className="h-[1px] bg-slate-200 dark:bg-[var(--basic-border-color)] my-4"></div>
             <div>{documentation}</div>
             <li>
               <Link href={AppConfig.github}>GitHub</Link>

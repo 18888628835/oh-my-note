@@ -18,7 +18,7 @@ const CollapseNav: React.FC<ICollapseNav> = ({ menu }) => {
   return (
     <div
       className={classNames(
-        'block sm:hidden bg-white border-b border-gray-200 backdrop-blur-sm backdrop-saturate-200  dark:bg-[--dark-bg-color] z-20 sticky top-[64px]',
+        'block sm:hidden bg-white border-b border-gray-200 backdrop-blur-sm backdrop-saturate-200 dark:border-[var(--basic-border-color)] dark:bg-[--dark-header-bg-color] z-20 sticky top-[64px]',
         { 'bg-white/80': open === false, 'bg-white': open },
       )}
     >

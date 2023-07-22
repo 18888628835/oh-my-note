@@ -2,6 +2,7 @@
 'use client'
 import Link from 'next/link'
 import { FC, useContext } from 'react'
+import { HiExternalLink } from 'react-icons/hi'
 import ReactMarkdown from 'react-markdown'
 import { Prism } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
@@ -72,7 +73,7 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
           },
           img({ src, alt }) {
             return (
-              <span className="flex justify-center items-center border-gray-200 border rounded-md mt-6 mb-6 p-2">
+              <span className="flex justify-center items-center border-gray-200 dark:border-[var(--basic-border-color)] border rounded-md mt-6 mb-6 p-2">
                 <img loading="lazy" className="blur-sm" alt={alt || ''} src={src || ''} />
               </span>
             )
@@ -81,11 +82,21 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
             if (href && !href?.includes('http')) {
               return (
                 <Link href={href} {...restProps}>
-                  <span>{children}</span>
+                  <span className="inline-flex items-center text-blue-400">
+                    {children}
+                    <HiExternalLink />
+                  </span>
                 </Link>
               )
             }
-            return <a {...{ href, children, ...restProps }} />
+            return (
+              <a {...{ href, children, ...restProps }}>
+                <span className="inline-flex items-center text-blue-400">
+                  {children}
+                  <HiExternalLink />
+                </span>
+              </a>
+            )
           },
         }}
         className="markdown-body dark:text-white dark:bg-[var(--dark-bg-color)]"

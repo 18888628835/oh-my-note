@@ -1,12 +1,6 @@
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable no-descending-specificity */
 
-/* @media (prefers-color-scheme: light) {
-  .markdown-body{
-    --color-canvas-subtle: #f6f8fa
-  }
-} */
-
 .markdown-body {
   --color-prettylights-syntax-comment: #6e7781;
   --color-prettylights-syntax-constant: #0550ae;
@@ -50,6 +44,12 @@
   --color-accent-emphasis: #0969da;
   --color-attention-subtle: #fff8c5;
   --color-danger-fg: #cf222e;
+}
+
+@media (prefers-color-scheme: dark) {
+  .markdown-body {
+    --color-border-muted: #64748b4d;
+  }
 }
 
 .markdown-body {

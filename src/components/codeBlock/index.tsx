@@ -52,7 +52,7 @@ const CodeBlock: FC<PropsWithChildren<CopyProps>> = ({ language, code, renderHig
               <button
                 onClick={() => executeJS(code)}
                 className={classNames(
-                  'flex items-center justify-center :hover:bg-[var(--color-btn-hover-background)] dark:hover:bg-[var(--ds-gray-200)]',
+                  'flex items-center justify-center :hover:bg-[var(--color-btn-hover-background)] dark:hover:bg-[var(--dark-btn-hover-bg-color)] dark:hover:text-[var(--dark-btn-hover-color)]',
                   styles['copy-btn'],
                 )}
               >
@@ -63,7 +63,10 @@ const CodeBlock: FC<PropsWithChildren<CopyProps>> = ({ language, code, renderHig
           <Tooltip title="复制代码">
             <button
               onClick={onCopy}
-              className={classNames('flex-center-box dark:hover:bg-[var(--ds-gray-200)]', styles['copy-btn'])}
+              className={classNames(
+                'flex-center-box dark:hover:bg-[var(--dark-btn-hover-bg-color)] dark:hover:text-[var(--dark-btn-hover-color)]',
+                styles['copy-btn'],
+              )}
             >
               {!copied ? (
                 <MdOutlineContentCopy className={classNames('animate__animated', 'animate__zoomIn')} />
@@ -93,24 +96,27 @@ const CodeBlock: FC<PropsWithChildren<CopyProps>> = ({ language, code, renderHig
       {mode === 'preview' && (
         <footer>
           <form
-            className="text-gray-500 text-xl gap-2 flex items-center px-3 py-3 border-t border-[rgba(5, 5, 5, 0.06)] border-dashed"
+            className="text-gray-500 text-xl gap-2 flex items-center px-3 py-3 border-t border-[rgba(5, 5, 5, 0.06)] dark:border-[var(--basic-border-color)] border-dashed"
             action={getCodeSandboxSrc({ embed: false })}
             method="POST"
             target="_blank"
           >
             <input type="hidden" name="parameters" value={`${parameters}`} />
             <Tooltip title="在 codeSandbox 中打开">
-              <button type="submit">
+              <button type="submit" className="dark:hover:text-[var(--dark-btn-hover-color)]">
                 <AiOutlineCodeSandbox />
               </button>
             </Tooltip>
             <Tooltip title={showCode ? '隐藏代码' : '显示代码'}>
-              <button type="button" onClick={toggleShowCode}>
+              <button type="button" onClick={toggleShowCode} className="dark:hover:text-[var(--dark-btn-hover-color)]">
                 {showCode ? <BsCodeSlash /> : <BsCode />}
               </button>
             </Tooltip>
           </form>
-          <div hidden={!showCode} className="border-dashed border-t border-[rgba(5, 5, 5, 0.06)]">
+          <div
+            hidden={!showCode}
+            className="border-dashed border-t border-[rgba(5, 5, 5, 0.06)] dark:border-[var(--basic-border-color)]"
+          >
             {renderHighlighter}
           </div>
         </footer>

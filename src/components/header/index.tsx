@@ -67,7 +67,7 @@ const Header: FC<HeaderProps> = ({ nav }) => {
       className={classNames(
         styles['page-header'],
         'sticky z-50 top-0',
-        'sm:px-7 md:px-8 lg:px-9 dark:bg-[var(--dark-bg-color)] bg-[var(--page-header-background)]',
+        'sm:px-7 md:px-8 lg:px-9 dark:bg-[var(--dark-header-bg-color)] bg-[var(--page-header-background)]',
       )}
     >
       <div className="drawer">
