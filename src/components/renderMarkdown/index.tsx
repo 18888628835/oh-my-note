@@ -20,7 +20,8 @@ interface RenderMarkdownProps {
 const SyntaxHighlighter = styled(Prism)`
   background: inherit !important;
   code {
-    white-space: break-spaces !important;
+    /* white-space: break-all !important; */
+    word-break: break-all !important;
   }
 `
 
@@ -44,6 +45,7 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
                   <SyntaxHighlighter
                     showLineNumbers
                     {...props}
+                    wrapLines
                     language={language.toLocaleLowerCase()}
                     style={darkMode ? vscDarkPlus : undefined}
                   >
