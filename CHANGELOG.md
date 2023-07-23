@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.1](https://github.com/18888628835/oh-my-note/compare/v1.17.0...v1.17.1) (2023-07-23)
+
+
+### Bug Fixes
+
+* work break ([979b906](https://github.com/18888628835/oh-my-note/commit/979b90660ae9a10896e852e3d222f5118ed7b5a1))
+
 ## [1.17.0](https://github.com/18888628835/oh-my-note/compare/v1.16.2...v1.17.0) (2023-07-21)
 
 
