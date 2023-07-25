@@ -66,7 +66,7 @@ const Header: FC<HeaderProps> = ({ nav }) => {
     <header
       className={classNames(
         styles['page-header'],
-        'sticky z-50 top-0 max-w-screen-xl mx-auto',
+        'sticky z-50 top-0 mx-auto',
         'sm:px-7 dark:bg-[var(--dark-header-bg-color)] bg-[var(--page-header-background)]',
       )}
     >
