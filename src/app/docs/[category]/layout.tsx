@@ -23,9 +23,9 @@ const layout = async ({
     notFound()
   }
   return (
-    <section className="min-h-[calc(100vh-var(--page-header-height))] relative sm:py-10 mx-auto sm:flex sm:flex-row">
+    <section className="max-w-screen-xl min-h-[calc(100vh-var(--page-header-height))] relative sm:py-10 mx-auto sm:flex sm:flex-row sm:px-6">
       <aside className="hidden sm:block relative">
-        <div className="styled-scrollbar sticky overflow-y-scroll top-[var(--sticky-top)] h-[calc(100vh-var(--sticky-top))]  pr-2 w-[284px]">
+        <div className="styled-scrollbar sticky overflow-y-scroll top-[var(--sticky-top)] h-[calc(100vh-var(--sticky-top))] pr-4 w-[284px]">
           <span className="flex items-center gap-2 text-lg mb-2">
             <FiBox />
             Documentation
@@ -34,7 +34,7 @@ const layout = async ({
         </div>
       </aside>
       <CollapseNav menu={categoryMenu} />
-      <div className="z-10 flex-grow flex px-4 md:px-6">{children}</div>
+      <div className="z-10 flex-grow flex">{children}</div>
     </section>
   )
 }

@@ -4,7 +4,7 @@ import AppConfig from 'src/config/app'
 import { readDir } from 'src/lib/util'
 
 const layout = async ({ children }: { children: React.ReactNode }) => {
-  return <main className="sm:px-9">{children}</main>
+  return <main>{children}</main>
 }
 
 export default layout

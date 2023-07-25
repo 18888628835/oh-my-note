@@ -25,7 +25,7 @@ const CollapseNav: React.FC<ICollapseNav> = ({ menu }) => {
       <div className="flex flex-col justify-between px-4">
         <button className="py-2 text-left flex items-center gap-2" onClick={() => setOpen((o) => !o)}>
           <AiOutlineRight className={open ? 'transition-all rotate-90' : 'transition-all'} />
-          Menu
+          Documentation
         </button>
         <div hidden={!open} className="w-full h-screen pr-3 pl-0 overflow-y-scroll">
           <MenuList menu={menu} />
