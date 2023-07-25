@@ -27,7 +27,7 @@ const CollapseNav: React.FC<ICollapseNav> = ({ menu }) => {
           <AiOutlineRight className={open ? 'transition-all rotate-90' : 'transition-all'} />
           Documentation
         </button>
-        <div hidden={!open} className="w-full h-screen pr-3 pl-0 overflow-y-scroll">
+        <div hidden={!open} className="w-full h-screen pr-3 pl-0 overflow-y-scroll pb-2 max-h-[calc(100vh-100px)]">
           <MenuList menu={menu} />
         </div>
       </div>
