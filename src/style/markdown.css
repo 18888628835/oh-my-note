@@ -227,10 +227,6 @@
   font: inherit;
 }
 
-.markdown-body a:hover {
-  text-decoration: underline;
-}
-
 .markdown-body ::placeholder {
   color: var(--color-fg-subtle);
   opacity: 1;

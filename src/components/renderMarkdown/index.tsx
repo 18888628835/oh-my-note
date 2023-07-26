@@ -10,7 +10,7 @@ import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
 import { styled } from 'styled-components'
 import CodeBlock from 'src/components/codeBlock'
-import HeadingHashLink from 'src/components/hashLink'
+import HeadingLink from 'src/components/headingLink'
 import { getChildrenId } from 'src/lib/md-utils'
 import { EnvContext } from 'src/store/env'
 
@@ -59,17 +59,17 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
           h2({ node, children, level }) {
             const id = getChildrenId(node.children)
             return (
-              <HeadingHashLink level={level} id={id} href={`#${id}`}>
+              <HeadingLink level={level} id={id} href={`#${id}`}>
                 {children}
-              </HeadingHashLink>
+              </HeadingLink>
             )
           },
           h3({ children, node, level }) {
             const id = getChildrenId(node.children)
             return (
-              <HeadingHashLink level={level} id={id} href={`#${id}`}>
+              <HeadingLink level={level} id={id} href={`#${id}`}>
                 {children}
-              </HeadingHashLink>
+              </HeadingLink>
             )
           },
           img({ src, alt }) {
