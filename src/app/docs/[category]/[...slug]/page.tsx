@@ -24,7 +24,7 @@ const page = async ({ params: { slug, category } }: { params: { slug: string[]; 
     notFound()
   }
   return (
-    <div className="flex w-full h-full">
+    <div className="grid w-full h-full lg:grid-cols-[1fr_14rem]">
       <article className="px-4 md:px-6 overflow-x-hidden">
         <div className="mt-4 mb-7 sm:mt-2 md:mb-8">
           <Breadcrumb items={breadcrumbItems} />

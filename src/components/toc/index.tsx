@@ -41,9 +41,9 @@ const Toc: FC<TocProps> = ({ headings }) => {
   useEvent('scroll', setActiveElement, window)
 
   return (
-    <div className={'hidden lg:block shrink-0 w-56'}>
+    <div className="hidden lg:block shrink-0">
       <div className="w-full sticky top-[var(--sticky-top)] pb-[var(--basic-gap)] pl-4 border-l border-[var(--basic-border-color)]">
-        <div className="mb-1 mt-[7px] text-sm font-medium text-gray-700 dark:text-white">On this page</div>
+        <div className="mb-1 text-sm font-medium text-gray-700 dark:text-white">On this page</div>
         <ul className="space-y-2.5 py-2 text-sm overflow-y-auto max-h-[70vh]">
           {headings.map(({ text, depth }, index) => (
             <li

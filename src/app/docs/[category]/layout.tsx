@@ -24,17 +24,19 @@ const layout = async ({
   }
   return (
     <section className="min-h-[calc(100vh-var(--page-header-height))] relative sm:py-10 mx-auto sm:flex sm:flex-row sm:px-6">
-      <aside className="hidden sm:block relative">
-        <div className="styled-scrollbar sticky overflow-y-scroll top-[var(--sticky-top)] h-[calc(100vh-var(--sticky-top))] pr-4 w-[284px]">
-          <span className="flex items-center gap-2 text-lg mb-2">
-            <FiBox />
-            Documentation
-          </span>
-          <Menu menu={categoryMenu} />
+      <aside className="hidden sm:block">
+        <div className="styled-scrollbar sticky overflow-y-scroll top-[var(--sticky-top)] max-h-[calc(100vh-var(--sticky-top))] w-[284px]">
+          <div className="border-r border-[var(--basic-border-color)] pr-4">
+            <span className="flex items-center gap-2 text-lg mb-2">
+              <FiBox />
+              Documentation
+            </span>
+            <Menu menu={categoryMenu} />
+          </div>
         </div>
       </aside>
       <CollapseNav menu={categoryMenu} />
-      <div className="z-10 flex-grow flex">{children}</div>
+      <div className="z-10">{children}</div>
     </section>
   )
 }
