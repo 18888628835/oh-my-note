@@ -8,23 +8,26 @@ import { MdOutlineContentCopy } from 'react-icons/md'
 import { VscDebugStart } from 'react-icons/vsc'
 import Root from 'react-shadow'
 import styles from 'src/components/codeBlock/index.module.scss'
+import { languageIconMapping } from 'src/lib/constant'
 import { executeJS, getCodeSandboxParameters, getCodeSandboxSrc } from 'src/lib/md-utils'
 
-interface CopyProps {
+interface ICodeBlock {
   code: string
   language: string
   mode?: CodeblockMode
   renderHighlighter: React.ReactNode
 }
 
-const CodeBlock: FC<PropsWithChildren<CopyProps>> = ({ language, code, renderHighlighter, mode }) => {
+const CodeBlock: FC<PropsWithChildren<ICodeBlock>> = ({ language, code, renderHighlighter, mode }) => {
   const [copied, setCopied] = useState(false)
   const [showCode, setShowCode] = useState(false)
   const parameters = getCodeSandboxParameters({ language, code })
+  const LanguageIcon = languageIconMapping?.[language] || languageIconMapping.default
+
   function reset() {
     setCopied(false)
   }
-  const onCopy = async () => {
+  async function onCopy() {
     try {
       await navigator.clipboard.writeText(code)
       setCopied(true)
@@ -36,7 +39,10 @@ const CodeBlock: FC<PropsWithChildren<CopyProps>> = ({ language, code, renderHig
       reset()
     }
   }
-  const toggleShowCode = () => setShowCode((oldStatus) => !oldStatus)
+  function toggleShowCode() {
+    setShowCode((oldStatus) => !oldStatus)
+  }
+
   return (
     <div className={classNames('dark:bg-[var(--dark-code-block-bg-color)]', styles['root-container'])}>
       <div
@@ -45,9 +51,13 @@ const CodeBlock: FC<PropsWithChildren<CopyProps>> = ({ language, code, renderHig
           'flex-space-between-box bg-[var(--basic-background)] dark:bg-[var(--dark-code-block-header-bg-color)]',
         )}
       >
-        <div className={styles['language']}>{language}</div>
+        <div className="flex items-center gap-1">
+          <LanguageIcon className="text-lg" />
+          <span>{language}</span>
+        </div>
         <div className="flex gap-1">
-          {['js', 'javascript'].includes(language.toLocaleLowerCase()) && (
+          {/* 小写的 language以便验证是否有 execute 图标 */}
+          {['js', 'javascript'].includes(language) && (
             <Tooltip title="执行代码">
               <button
                 onClick={() => executeJS(code)}
@@ -93,26 +103,31 @@ const CodeBlock: FC<PropsWithChildren<CopyProps>> = ({ language, code, renderHig
       ) : (
         renderHighlighter
       )}
-      {mode === 'preview' && (
+      {mode && (
         <footer>
-          <form
-            className="text-gray-500 text-xl gap-2 flex items-center px-3 py-3 border-t border-[rgba(5, 5, 5, 0.06)] dark:border-[var(--basic-border-color)] border-dashed"
-            action={getCodeSandboxSrc({ embed: false })}
-            method="POST"
-            target="_blank"
-          >
-            <input type="hidden" name="parameters" value={`${parameters}`} />
-            <Tooltip title="在 codeSandbox 中打开">
-              <button type="submit" className="dark:hover:text-[var(--dark-btn-hover-color)]">
-                <AiOutlineCodeSandbox />
-              </button>
-            </Tooltip>
+          <div className="text-gray-500 text-xl gap-2 flex items-center px-3 py-3 border-t border-[rgba(5, 5, 5, 0.06)] dark:border-[var(--basic-border-color)] border-dashed">
+            {mode === 'preview' && (
+              <form
+                className="flex items-center"
+                action={getCodeSandboxSrc({ embed: false })}
+                method="POST"
+                target="_blank"
+              >
+                <input type="hidden" name="parameters" value={`${parameters}`} />
+                <Tooltip title="在 codeSandbox 中打开">
+                  <button type="submit" className="dark:hover:text-[var(--dark-btn-hover-color)]">
+                    <AiOutlineCodeSandbox />
+                  </button>
+                </Tooltip>
+              </form>
+            )}
             <Tooltip title={showCode ? '隐藏代码' : '显示代码'}>
               <button type="button" onClick={toggleShowCode} className="dark:hover:text-[var(--dark-btn-hover-color)]">
                 {showCode ? <BsCodeSlash /> : <BsCode />}
               </button>
             </Tooltip>
-          </form>
+          </div>
+
           <div
             hidden={!showCode}
             className="border-dashed border-t border-[rgba(5, 5, 5, 0.06)] dark:border-[var(--basic-border-color)]"

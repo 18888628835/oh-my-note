@@ -4,7 +4,7 @@ import {
   appJsx,
   indexHtml,
   indexJsx,
-  languageSuffixMap,
+  languageSuffixMapping,
   packageJSON,
   codeSandboxSrc,
   embedConfiguration,
@@ -25,8 +25,8 @@ export function getChildrenId(children: any[]) {
 
 export function getSuffixFromLanguage(language: string) {
   let suffix = language
-  if (language in languageSuffixMap) {
-    suffix = languageSuffixMap[language as keyof typeof languageSuffixMap]
+  if (language in languageSuffixMapping) {
+    suffix = languageSuffixMapping[language as keyof typeof languageSuffixMapping]
   }
   return suffix
 }

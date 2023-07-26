@@ -34,19 +34,18 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
           code({ node, style, inline, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || '')
             const code = String(children).replace(/\n$/, '')
-            const language = match ? match[1] : ''
+            // 小写的 language以便验从映射表中获取文件的suffix 和 icon
+            const language = match ? match?.[1]?.toLocaleLowerCase() : ''
             const mode = (['codeSandbox', 'preview'] as Array<CodeblockMode>).find((item) =>
-              match?.['input']?.toLocaleLowerCase()?.includes(item.toLocaleLowerCase()),
+              className?.toLocaleLowerCase()?.includes(item.toLocaleLowerCase()),
             )
             return !inline && match ? (
               <CodeBlock
                 {...{ code, mode, language }}
                 renderHighlighter={
                   <SyntaxHighlighter
-                    showLineNumbers
                     {...props}
-                    wrapLines
-                    language={language.toLocaleLowerCase()}
+                    {...{ showLineNumbers: true, wrapLines: true, language }}
                     style={darkMode ? vscDarkPlus : undefined}
                   >
                     {code}

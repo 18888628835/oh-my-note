@@ -1,4 +1,9 @@
-export const languageSuffixMap = {
+import { AiFillHtml5, AiOutlineFile } from 'react-icons/ai'
+import { BiLogoTypescript, BiLogoJavascript, BiLogoCss3 } from 'react-icons/bi'
+import { IconType } from 'react-icons/lib'
+import { VscJson } from 'react-icons/vsc'
+
+export const languageSuffixMapping = {
   jsx: 'jsx',
   tsx: 'tsx',
   javascript: 'js',
@@ -60,4 +65,17 @@ export const embedConfiguration = {
   runonclick: 1,
   theme: 'light',
   view: 'preview',
+}
+
+export const languageIconMapping: Record<string, IconType> = {
+  html: AiFillHtml5,
+  typescript: BiLogoTypescript,
+  ts: BiLogoTypescript,
+  tsx: BiLogoTypescript,
+  javascript: BiLogoJavascript,
+  js: BiLogoJavascript,
+  jsx: BiLogoJavascript,
+  css: BiLogoCss3,
+  json: VscJson,
+  default: AiOutlineFile,
 }
