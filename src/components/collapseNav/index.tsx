@@ -28,7 +28,7 @@ const CollapseNav: React.FC<ICollapseNav> = ({ menu }) => {
           Documentation
         </button>
         <div hidden={!open} className="w-full h-screen pr-3 pl-0 overflow-y-scroll pb-2 max-h-[calc(100vh-100px)]">
-          <MenuList menu={menu} />
+          <MenuList menu={menu} onClick={() => setOpen(false)} />
         </div>
       </div>
     </div>
