@@ -2,17 +2,6 @@ import fs from 'fs'
 import path from 'path'
 import { marked } from 'marked'
 import AppConfig from 'src/config/app'
-export function isDirectory(path: string) {
-  try {
-    return fs.statSync(path).isDirectory()
-  } catch (error) {
-    return false
-  }
-}
-
-export function addSuffix(fileName: string) {
-  return fileName + AppConfig.suffix
-}
 
 export function deleteSuffix(fileName: string) {
   const pointIndex = fileName.lastIndexOf('.')
@@ -20,19 +9,21 @@ export function deleteSuffix(fileName: string) {
   return fileName.substring(0, pointIndex)
 }
 
-export function getLabelFromMarkdown(markdownFilePath: string) {
+export function getTitleOfMarkdown(markdownFilePath: string) {
   const markdown = fs.readFileSync(markdownFilePath, 'utf-8')
-  const firstLine = markdown?.split('/n')[0]
-  const title = marked.lexer(firstLine)[0]?.raw
-  const label = getTextFromRaw(title)
-  return label
+  const rootHeading = getHeadingOfMarkdown(markdown, [1])
+  const title = rootHeading[0]?.text ?? ''
+  return title
 }
-
-export function getTextFromRaw(rawText?: string) {
-  return rawText?.replaceAll('#', '').trim().replaceAll('\n', '')
+export function getHeadingOfMarkdown(markdown: string, levels: number[]) {
+  const heading = marked
+    .lexer(markdown)
+    .filter((item) => item.type === 'heading' && levels.includes(item.depth)) as marked.Tokens.Heading[]
+  return heading
 }
 
 export function readDir(entry: string) {
+  // ios系统会自动创建一个.DS_Store文件，需要过滤掉
   return fs.readdirSync(entry).filter((file) => (file === '.DS_Store' ? false : true))
 }
 

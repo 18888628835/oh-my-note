@@ -1,10 +1,11 @@
 'use client'
 import classNames from 'classnames'
+import { marked } from 'marked'
 import { FC, useState } from 'react'
 import { useEvent } from 'react-use'
 
 interface TocProps {
-  headings: { text: string; depth: number }[]
+  headings: marked.Tokens.Heading[]
 }
 
 const Toc: FC<TocProps> = ({ headings }) => {

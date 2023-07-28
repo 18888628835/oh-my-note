@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 
 const Container: React.FC<React.PropsWithChildren> = ({ children }) => {
