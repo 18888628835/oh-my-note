@@ -80,22 +80,22 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
             )
           },
           a({ href, children, ...restProps }) {
-            if (href && !href?.includes('http')) {
+            const isInternalLink = href && href.includes('http') === false
+            if (isInternalLink) {
               return (
-                <Link href={href} {...restProps}>
-                  <span className="inline-flex items-center text-blue-400">
-                    {children}
-                    <HiExternalLink />
-                  </span>
+                <Link {...{ href, ...restProps }}>
+                  <span className=" text-blue-400">{children}</span>
                 </Link>
               )
             }
             return (
-              <a {...{ href, children, ...restProps }}>
-                <span className="inline-flex items-center text-blue-400">
-                  {children}
-                  <HiExternalLink />
-                </span>
+              <a {...{ href, children, target: '_blank', ...restProps }}>
+                {
+                  <span className=" text-blue-400">
+                    {children}
+                    <HiExternalLink className="inline align-text-top" />
+                  </span>
+                }
               </a>
             )
           },
