@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.18.0](https://github.com/18888628835/oh-my-note/compare/v1.17.1...v1.18.0) (2023-07-28)
+
+
+### Features
+
+* shut the collapse navigation automatically ([44f6bdb](https://github.com/18888628835/oh-my-note/commit/44f6bdb2931e15842c64029b6d1043e73e553189))
+
 ## [1.17.1](https://github.com/18888628835/oh-my-note/compare/v1.17.0...v1.17.1) (2023-07-23)
 
 
