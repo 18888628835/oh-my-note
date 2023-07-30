@@ -20,8 +20,12 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     },
     extend: {},
+    animatedSettings: {
+      animatedSpeed: 300,
+      classes: ['zoomIn'],
+    },
   },
-  plugins: [require('tailwind-scrollbar-hide'), require('daisyui')],
+  plugins: [require('tailwind-scrollbar-hide'), require('daisyui'), require('tailwindcss-animatecss')],
   daisyui: {
     theme: ['light'],
     darkTheme: 'light',

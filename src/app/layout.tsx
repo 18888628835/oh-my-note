@@ -1,4 +1,3 @@
-import 'animate.css'
 import 'normalize.css'
 import 'src/style/markdown.css'
 import 'src/style/variable.css'

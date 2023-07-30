@@ -11,7 +11,6 @@ specifiers:
   '@types/styled-components': ^5.1.26
   '@typescript-eslint/eslint-plugin': ^5.59.2
   '@typescript-eslint/parser': ^5.59.2
-  animate.css: ^4.1.1
   antd: ^5.5.0
   autoprefixer: ^10.4.14
   classnames: ^2.3.2
@@ -55,6 +54,7 @@ specifiers:
   stylelint-config-standard-scss: ^9.0.0
   tailwind-scrollbar-hide: ^1.1.7
   tailwindcss: ^3.3.2
+  tailwindcss-animatecss: ^3.0.4
   typescript: 5.0.4
 
 dependencies:
@@ -63,7 +63,6 @@ dependencies:
   '@types/node': registry.npmmirror.com/@types/node/20.1.0
   '@types/react': registry.npmmirror.com/@types/react/18.2.6
   '@types/react-dom': registry.npmmirror.com/@types/react-dom/18.2.4
-  animate.css: registry.npmmirror.com/animate.css/4.1.1
   antd: registry.npmmirror.com/antd/5.5.0_biqbaboplfbrettd7655fr4n2y
   classnames: registry.npmmirror.com/classnames/2.3.2
   codesandbox: registry.npmmirror.com/codesandbox/2.2.3
@@ -91,6 +90,7 @@ dependencies:
   remark-gfm: registry.npmmirror.com/remark-gfm/3.0.1
   styled-components: registry.npmmirror.com/styled-components/6.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
   tailwind-scrollbar-hide: registry.npmmirror.com/tailwind-scrollbar-hide/1.1.7
+  tailwindcss-animatecss: registry.npmmirror.com/tailwindcss-animatecss/3.0.4_tailwindcss@3.3.2
   typescript: registry.npmmirror.com/typescript/5.0.4
 
 devDependencies:
@@ -388,7 +388,6 @@ packages:
     name: '@alloc/quick-lru'
     version: 5.2.0
     engines: { node: '>=10' }
-    dev: true
 
   registry.npmmirror.com/@ampproject/remapping/2.2.1:
     resolution:
@@ -4288,17 +4287,6 @@ packages:
       '@algolia/transporter': registry.npmmirror.com/@algolia/transporter/4.18.0
     dev: false
 
-  registry.npmmirror.com/animate.css/4.1.1:
-    resolution:
-      {
-        integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==,
-        registry: https://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/animate.css/-/animate.css-4.1.1.tgz,
-      }
-    name: animate.css
-    version: 4.1.1
-    dev: false
-
   registry.npmmirror.com/ansi-align/2.0.0:
     resolution:
       {
@@ -4500,7 +4488,6 @@ packages:
       }
     name: any-promise
     version: 1.3.0
-    dev: true
 
   registry.npmmirror.com/anymatch/3.1.3:
     resolution:
@@ -4548,7 +4535,6 @@ packages:
       }
     name: arg
     version: 5.0.2
-    dev: true
 
   registry.npmmirror.com/argparse/2.0.1:
     resolution:
@@ -5273,7 +5259,6 @@ packages:
     name: camelcase-css
     version: 2.0.1
     engines: { node: '>= 6' }
-    dev: true
 
   registry.npmmirror.com/camelcase-keys/6.2.2:
     resolution:
@@ -6239,7 +6224,6 @@ packages:
     version: 3.0.0
     engines: { node: '>=4' }
     hasBin: true
-    dev: true
 
   registry.npmmirror.com/csstype/3.1.2:
     resolution:
@@ -6641,7 +6625,6 @@ packages:
       }
     name: didyoumean
     version: 1.2.2
-    dev: true
 
   registry.npmmirror.com/diff/4.0.2:
     resolution:
@@ -6690,7 +6673,6 @@ packages:
       }
     name: dlv
     version: 1.1.3
-    dev: true
 
   registry.npmmirror.com/doctrine/2.1.0:
     resolution:
@@ -8637,7 +8619,6 @@ packages:
       minimatch: registry.npmmirror.com/minimatch/3.1.2
       once: registry.npmmirror.com/once/1.4.0
       path-is-absolute: registry.npmmirror.com/path-is-absolute/1.0.1
-    dev: true
 
   registry.npmmirror.com/glob/7.1.7:
     resolution:
@@ -10466,7 +10447,6 @@ packages:
     name: jiti
     version: 1.18.2
     hasBin: true
-    dev: true
 
   registry.npmmirror.com/jose/4.14.4:
     resolution:
@@ -10792,7 +10772,6 @@ packages:
     name: lilconfig
     version: 2.1.0
     engines: { node: '>=10' }
-    dev: true
 
   registry.npmmirror.com/lines-and-columns/1.2.4:
     resolution:
@@ -10803,7 +10782,6 @@ packages:
       }
     name: lines-and-columns
     version: 1.2.4
-    dev: true
 
   registry.npmmirror.com/lint-staged/13.2.2:
     resolution:
@@ -12376,7 +12354,6 @@ packages:
       any-promise: registry.npmmirror.com/any-promise/1.3.0
       object-assign: registry.npmmirror.com/object-assign/4.1.1
       thenify-all: registry.npmmirror.com/thenify-all/1.6.0
-    dev: true
 
   registry.npmmirror.com/nano-css/5.3.5_biqbaboplfbrettd7655fr4n2y:
     resolution:
@@ -12743,7 +12720,6 @@ packages:
     name: object-hash
     version: 3.0.0
     engines: { node: '>= 6' }
-    dev: true
 
   registry.npmmirror.com/object-inspect/1.12.3:
     resolution:
@@ -13470,7 +13446,6 @@ packages:
     name: pify
     version: 2.3.0
     engines: { node: '>=0.10.0' }
-    dev: true
 
   registry.npmmirror.com/pify/3.0.0:
     resolution:
@@ -13506,7 +13481,6 @@ packages:
     name: pirates
     version: 4.0.5
     engines: { node: '>= 6' }
-    dev: true
 
   registry.npmmirror.com/postcss-import/15.1.0_postcss@8.4.24:
     resolution:
@@ -13526,7 +13500,6 @@ packages:
       postcss-value-parser: registry.npmmirror.com/postcss-value-parser/4.2.0
       read-cache: registry.npmmirror.com/read-cache/1.0.0
       resolve: registry.npmmirror.com/resolve/1.22.2
-    dev: true
 
   registry.npmmirror.com/postcss-js/4.0.1_postcss@8.4.24:
     resolution:
@@ -13544,7 +13517,6 @@ packages:
     dependencies:
       camelcase-css: registry.npmmirror.com/camelcase-css/2.0.1
       postcss: registry.npmmirror.com/postcss/8.4.24
-    dev: true
 
   registry.npmmirror.com/postcss-load-config/4.0.1_postcss@8.4.24:
     resolution:
@@ -13569,7 +13541,6 @@ packages:
       lilconfig: registry.npmmirror.com/lilconfig/2.1.0
       postcss: registry.npmmirror.com/postcss/8.4.24
       yaml: registry.npmmirror.com/yaml/2.2.2
-    dev: true
 
   registry.npmmirror.com/postcss-media-query-parser/0.2.3:
     resolution:
@@ -13598,7 +13569,6 @@ packages:
     dependencies:
       postcss: registry.npmmirror.com/postcss/8.4.24
       postcss-selector-parser: registry.npmmirror.com/postcss-selector-parser/6.0.12
-    dev: true
 
   registry.npmmirror.com/postcss-resolve-nested-selector/0.1.1:
     resolution:
@@ -13658,7 +13628,6 @@ packages:
     dependencies:
       cssesc: registry.npmmirror.com/cssesc/3.0.0
       util-deprecate: registry.npmmirror.com/util-deprecate/1.0.2
-    dev: true
 
   registry.npmmirror.com/postcss-value-parser/4.2.0:
     resolution:
@@ -13700,7 +13669,6 @@ packages:
       nanoid: registry.npmmirror.com/nanoid/3.3.6
       picocolors: registry.npmmirror.com/picocolors/1.0.0
       source-map-js: registry.npmmirror.com/source-map-js/1.0.2
-    dev: true
 
   registry.npmmirror.com/preact-render-to-string/5.2.6_preact@10.15.0:
     resolution:
@@ -15113,7 +15081,6 @@ packages:
     version: 1.0.0
     dependencies:
       pify: registry.npmmirror.com/pify/2.3.0
-    dev: true
 
   registry.npmmirror.com/read-pkg-up/7.0.1:
     resolution:
@@ -17023,7 +16990,6 @@ packages:
       mz: registry.npmmirror.com/mz/2.7.0
       pirates: registry.npmmirror.com/pirates/4.0.5
       ts-interface-checker: registry.npmmirror.com/ts-interface-checker/0.1.13
-    dev: true
 
   registry.npmmirror.com/supports-color/5.5.0:
     resolution:
@@ -17132,6 +17098,22 @@ packages:
     version: 1.1.7
     dev: false
 
+  registry.npmmirror.com/tailwindcss-animatecss/3.0.4_tailwindcss@3.3.2:
+    resolution:
+      {
+        integrity: sha512-Fu8RK6qZ625VafKciffYttfanG6rOQPkv4ox6FvIfCAJZzGoKjnExiy5Lb4IEQxJhSaazNXbUvVyhPjGaZ2EcA==,
+        registry: https://registry.npm.taobao.org/,
+        tarball: https://registry.npmmirror.com/tailwindcss-animatecss/-/tailwindcss-animatecss-3.0.4.tgz,
+      }
+    id: registry.npmmirror.com/tailwindcss-animatecss/3.0.4
+    name: tailwindcss-animatecss
+    version: 3.0.4
+    peerDependencies:
+      tailwindcss: '>=3.1.0'
+    dependencies:
+      tailwindcss: registry.npmmirror.com/tailwindcss/3.3.2
+    dev: false
+
   registry.npmmirror.com/tailwindcss/3.3.2:
     resolution:
       {
@@ -17169,7 +17151,6 @@ packages:
       sucrase: registry.npmmirror.com/sucrase/3.32.0
     transitivePeerDependencies:
       - ts-node
-    dev: true
 
   registry.npmmirror.com/tapable/2.2.1:
     resolution:
@@ -17267,7 +17248,6 @@ packages:
     engines: { node: '>=0.8' }
     dependencies:
       thenify: registry.npmmirror.com/thenify/3.3.1
-    dev: true
 
   registry.npmmirror.com/thenify/3.3.1:
     resolution:
@@ -17280,7 +17260,6 @@ packages:
     version: 3.3.1
     dependencies:
       any-promise: registry.npmmirror.com/any-promise/1.3.0
-    dev: true
 
   registry.npmmirror.com/throttle-debounce/3.0.1:
     resolution:
@@ -17468,7 +17447,6 @@ packages:
       }
     name: ts-interface-checker
     version: 0.1.13
-    dev: true
 
   registry.npmmirror.com/ts-node/10.9.1_sc42aji77byzfj43uxzoje53je:
     resolution:
@@ -18454,7 +18432,6 @@ packages:
     name: yaml
     version: 2.2.2
     engines: { node: '>= 14' }
-    dev: true
 
   registry.npmmirror.com/yargs-parser/20.2.9:
     resolution:
