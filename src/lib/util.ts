@@ -33,3 +33,9 @@ export async function getPostContent(paths: string[]) {
 
   return fileContent
 }
+
+export function sleep(delay: number) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, delay)
+  })
+}

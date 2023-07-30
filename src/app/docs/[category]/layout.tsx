@@ -24,20 +24,26 @@ const layout = async ({
     notFound()
   }
   return (
-    <section className="min-h-[calc(100vh-var(--page-header-height))] relative sm:py-10 mx-auto sm:flex sm:flex-row sm:px-6">
-      <aside className="hidden sm:block">
-        <div className="styled-scrollbar sticky overflow-y-scroll top-[var(--sticky-top)] max-h-[calc(100vh-var(--sticky-top))] w-[284px]">
-          <div className="border-r border-[var(--basic-border-color)] pr-4">
-            <span className="flex items-center gap-2 text-lg mb-2">
+    <section className="relative min-h-[calc(100vh-var(--page-header-height))] sm:pt-10 flex sm:px-6 flex-col sm:flex-row">
+      <aside className="w-[284px] sticky top-[104px] sm:block hidden max-h-[calc(100vh-64px-40px)] border-r border-[var(--basic-border-color)] pr-4">
+        <div className="h-full">
+          {/* aside header */}
+          <div className="text-lg border-b border-[var(--basic-border-color)]">
+            <div className="flex items-center gap-2 pb-2">
               <FiBox />
               Documentation
-            </span>
+            </div>
+          </div>
+          {/* aside content menus */}
+          <div className="max-h-[calc(100%-36px)] overflow-y-scroll">
             <Menu menu={categoryMenu} />
           </div>
         </div>
       </aside>
-      <CollapseNav menu={categoryMenu} />
-      <div className="z-10">{children}</div>
+      <div className="z-20 sticky top-[64px] block sm:hidden">
+        <CollapseNav menu={categoryMenu} />
+      </div>
+      <div className="z-10 flex-1 relative">{children}</div>
     </section>
   )
 }

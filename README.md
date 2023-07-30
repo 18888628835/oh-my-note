@@ -73,6 +73,8 @@ alert('this is a example')
 
 ~~**全站文档搜索**~~
 
+~~**样式隔离**~~
+
 ~~**移动端适配**~~
 
 ~~**深色模式适配**~~
@@ -93,7 +95,7 @@ alert('this is a example')
 
 ~~**404 提示**~~
 
-**ChangeLog**
+~~**ChangeLog**~~
 
 **评论功能**
 
