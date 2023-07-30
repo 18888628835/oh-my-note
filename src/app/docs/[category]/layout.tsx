@@ -43,7 +43,7 @@ const layout = async ({
       <div className="z-20 sticky top-[64px] block sm:hidden">
         <CollapseNav menu={categoryMenu} />
       </div>
-      <div className="z-10 flex-1 relative">{children}</div>
+      <div className="z-10 flex-1 relative dark:bg-[var(--dark-bg-color)]">{children}</div>
     </section>
   )
 }
