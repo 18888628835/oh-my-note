@@ -24,7 +24,7 @@ const layout = async ({
     notFound()
   }
   return (
-    <section className="relative min-h-[calc(100vh-var(--page-header-height))] sm:pt-10 flex sm:px-6 flex-col sm:flex-row">
+    <section className="relative min-h-[calc(100vh-var(--page-header-height))] sm:pt-10 flex sm:px-6 flex-col sm:flex-row bg-inherit">
       <aside className="w-[284px] sticky top-[104px] sm:block hidden max-h-[calc(100vh-64px-40px)] border-r border-[var(--basic-border-color)] pr-4">
         <div className="h-full">
           {/* aside header */}

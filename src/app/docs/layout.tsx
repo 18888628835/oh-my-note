@@ -4,7 +4,7 @@ import AppConfig from 'src/config/app'
 import { readDir } from 'src/lib/util'
 
 const layout = async ({ children }: { children: React.ReactNode }) => {
-  return <main>{children}</main>
+  return <main className="dark:bg-inherit">{children}</main>
 }
 
 export default layout

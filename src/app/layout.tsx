@@ -27,13 +27,13 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const nav = await getNavigation()
   return (
-    <html lang="en" className="dark:bg-[var(--dark-bg-color)] dark:text-white">
+    <html lang="en" className="dark:bg-[var(--dark-bg-color)]">
       <link
         rel="preconnect"
         href={`https://${process.env.NEXT_PUBLIC_ALGOLIA_APP_ID}-dsn.algolia.net`}
         crossOrigin="anonymous"
       />
-      <body>
+      <body className="dark:bg-[var(--dark-bg-color)] dark:text-white">
         <StyledJsxRegistry>
           <Provider>
             <Container>
