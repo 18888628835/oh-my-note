@@ -10,7 +10,7 @@ const HeadingLink: FC<{ level: number; id: string } & React.AnchorHTMLAttributes
   const Heading = `h${level}` as keyof JSX.IntrinsicElements
 
   return (
-    <Heading id={id}>
+    <Heading id={id} data-doc-level={level}>
       <a
         className="dark:text-white text-[var(--basic-font-color)] hover:text-[var(--color-for-hover-link)] group/item"
         {...restProps}

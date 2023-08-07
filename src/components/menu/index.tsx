@@ -35,7 +35,7 @@ interface IMenuList {
 }
 const MenuList = ({ menu, onClick }: IMenuList) => {
   return (
-    <ul className={classNames('menu pt-1 px-0  overflow-y-auto', styles['documentation-menu'])}>
+    <ul className={classNames('menu pt-1 px-0 overflow-y-auto', styles['documentation-menu'])}>
       {generateMenu(menu, onClick)}
     </ul>
   )

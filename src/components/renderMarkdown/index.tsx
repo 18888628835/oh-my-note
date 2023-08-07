@@ -72,6 +72,9 @@ const RenderMarkdown: FC<RenderMarkdownProps> = ({ data }) => {
               </HeadingLink>
             )
           },
+          h1({ children }) {
+            return <h1 data-doc-level={1}>{children}</h1>
+          },
           img({ src, alt }) {
             return (
               <span className="flex justify-center items-center border-gray-200 dark:border-[var(--basic-border-color)] border rounded-md mt-6 mb-6 p-2">
