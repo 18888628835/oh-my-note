@@ -4,7 +4,7 @@ import { marked } from 'marked'
 import AppConfig from 'src/config/app'
 
 export function deleteSuffix(fileName: string) {
-  const pointIndex = fileName.lastIndexOf('.')
+  const pointIndex = fileName.lastIndexOf(AppConfig.suffix)
   if (pointIndex === -1) return fileName
   return fileName.substring(0, pointIndex)
 }
