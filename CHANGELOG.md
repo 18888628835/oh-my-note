@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.18.1](https://github.com/18888628835/oh-my-note/compare/v1.18.0...v1.18.1) (2023-09-12)
+
+
+### Bug Fixes
+
+* delete suffix ([fd19c56](https://github.com/18888628835/oh-my-note/commit/fd19c5698a71c6a8874d3d1673312dab6236b712))
+
 ## [1.18.0](https://github.com/18888628835/oh-my-note/compare/v1.17.1...v1.18.0) (2023-07-28)
 
 
