@@ -1,5 +1,5 @@
-import { AiFillHtml5, AiOutlineFile } from 'react-icons/ai'
-import { BiLogoTypescript, BiLogoJavascript, BiLogoCss3 } from 'react-icons/bi'
+import { AiFillHtml5, AiOutlineFile, AiOutlineConsoleSql } from 'react-icons/ai'
+import { BiLogoTypescript, BiLogoJavascript, BiLogoCss3, BiTerminal } from 'react-icons/bi'
 import { IconType } from 'react-icons/lib'
 import { VscJson } from 'react-icons/vsc'
 
@@ -77,5 +77,7 @@ export const languageIconMapping: Record<string, IconType> = {
   jsx: BiLogoJavascript,
   css: BiLogoCss3,
   json: VscJson,
+  sql: AiOutlineConsoleSql,
+  bash: BiTerminal,
   default: AiOutlineFile,
 }
