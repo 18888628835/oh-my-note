@@ -251,6 +251,7 @@ git reset --soft HEAD^ 恢复到上一个版本，但是 commit依然保留
 
 ```bash
 git rm file 删除某个文件 删除后可以直接commit
+git clean -fdx .  清理所有被 ignore 的文件，包括 node_module，清除依赖缓存非常有效
 ```
 
 合并
