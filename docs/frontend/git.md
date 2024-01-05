@@ -201,7 +201,7 @@ git reflog 查看所有切换过版本的情况以及切换过的操作情况用
 git reflog会记录所有信息，包括你穿越reset后的操作信息，git log只显示你当前版本到原始版本的信息
 ```
 
-分支操作
+**分支操作**
 
 ```bash
 git branch -v  查看所有分支
@@ -216,19 +216,35 @@ git checkout -b xx分支 origin/xx分支  从远程xx分支创建并切换到xx�
 git branch --set-upstream-to=origin/[remote branch]  本地分支跟远程分支关联
 ```
 
-修改 message
+**修改最新分支的 message**
 
 ```bash
 git commit --amend --message 'xxxx' 修改最新分支的message
-git rebase -i xxx commit字符串xxx  修改历史分支的message 需要pick r 命令后修改
-git rebase -I XX commit字符串xxx 合并多次提交到一次 需要pick s 命令后修改
 ```
 
-> xxx commit 字符串代表要以 xxxcommit 为基础进行 rebase。rebase 是基于这个 commit 的，所以可 pick 的 commit 不会取 rebase 的那一级。但 pick 是可添加的，如果希望包含以 rebase 为基础的 commit， 则可以添加 pick xxx commit 字符串，然后 git rebase - -continue
->
-> s 命令代表跟选中的上一级进行合并，可 pick 分支至少留一个否则 rebase 失败。
+**多个 message 合并为一个**
 
-贮藏
+- 确定你想要合并的提交数量。例如，如果你想要合并最近的 3 个提交，你可以使用以下命令：
+
+  ```bash
+  git rebase -i HEAD~3
+  ```
+
+- 这将打开一个文本编辑器，列出了最近的 3 个提交，每个提交一行。这些行的顺序是从旧到新的。
+
+- 保留你想要作为新提交的那一行提交信息前面的"pick"，将其他行前面的"pick"替换为"squash"或"s"。这意味着你想要将这些提交"压缩"到前一个提交中。
+
+- 保存并关闭编辑器。
+
+- Git 将会打开另一个编辑器，让你编辑新的提交信息。这个新的提交信息将会包含所有被压缩的提交的信息。
+
+- 保存并关闭编辑器。Git 将会创建一个新的提交。
+
+- 如果提交已经被推送到远程仓库，你将需要使用`git push --force`来推送你的更改。
+
+- 结束
+
+**贮藏**
 
 ```bash
 git stash
