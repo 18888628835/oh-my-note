@@ -6,7 +6,7 @@ const AppConfig = {
       path: '/docs/frontend/git',
     },
     { title: 'Backend', path: '/docs/backend/database/PostgreSQL 12.2 手册/0' },
-    { title: 'AWS', path: '/docs/aws/0' },
+    { title: '云服务', path: '/docs/aws/0' },
     { title: '工程化', path: '/docs/engineering/commit' },
     { title: 'CHANGELOG', path: '/change-log' },
   ],
