@@ -39,7 +39,7 @@ const Toc: FC<TocProps> = ({ headings }) => {
     }
   }
 
-  useEvent('scroll', setActiveElement, window)
+  useEvent('scroll', setActiveElement, typeof window !== 'undefined' ? window : undefined)
 
   return (
     <div className="hidden lg:block shrink-0">

@@ -30,7 +30,7 @@ const AnimateImageProvider: FC<PropsWithChildren> = ({ children }) => {
       })
     })
   }
-  useEvent('scroll', animateAllImage, window)
+  useEvent('scroll', animateAllImage, typeof window !== 'undefined' ? window : undefined)
 
   return <div ref={rootDom}>{children}</div>
 }
