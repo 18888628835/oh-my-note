@@ -15,7 +15,7 @@ function generateMenu(items: Menu[]) {
       return (
         <li key={item.key}>
           <details className="max-w-full">
-            <summary>{item.label}</summary>
+            <summary className="dark:text-[var(--dark-menu-font-color)] dark:hover:text-white">{item.label}</summary>
             <ul>{generateMenu(item.children)}</ul>
           </details>
         </li>
@@ -24,7 +24,12 @@ function generateMenu(items: Menu[]) {
 
     return (
       <li key={item.key}>
-        <Link href={item.key}>{item.label}</Link>
+        <Link
+          className="dark:text-[var(--dark-menu-font-color)] dark:hover:text-white dark:focus:text-[var(--color-for-hover-link)]"
+          href={item.key}
+        >
+          {item.label}
+        </Link>
       </li>
     )
   })

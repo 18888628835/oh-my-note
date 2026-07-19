@@ -11,6 +11,7 @@ import Provider from 'src/components/Provider'
 import Header from 'src/components/header'
 import AppConfig from 'src/config/app'
 import StyledJsxRegistry from 'src/lib/registry'
+
 export const metadata: Metadata = {
   title: AppConfig.brand,
   description: '业余时间手写的文档系统，记录着我的心得笔记。',
@@ -24,15 +25,20 @@ export const metadata: Metadata = {
   },
 }
 
+const themeInitScript = `(function(){try{var k='oh-my-note-theme';var t=localStorage.getItem(k);var d=t==='dark'||((t==='system'||!t)&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(t==='light')d=false;document.documentElement.classList.toggle('dark',d);}catch(e){}})();`
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const nav = await getNavigation()
   return (
-    <html lang="en" className="dark:bg-[var(--dark-bg-color)]">
-      <link
-        rel="preconnect"
-        href={`https://${process.env.NEXT_PUBLIC_ALGOLIA_APP_ID}-dsn.algolia.net`}
-        crossOrigin="anonymous"
-      />
+    <html lang="en" className="dark:bg-[var(--dark-bg-color)]" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <link
+          rel="preconnect"
+          href={`https://${process.env.NEXT_PUBLIC_ALGOLIA_APP_ID}-dsn.algolia.net`}
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="dark:bg-[var(--dark-bg-color)] dark:text-white">
         <StyledJsxRegistry>
           <Provider>

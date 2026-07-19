@@ -39,3 +39,24 @@ export function sleep(delay: number) {
     setTimeout(resolve, delay)
   })
 }
+
+export function traverseDocsDirectory(directory: string): Menu[] {
+  function traverseDir(dir: string): Menu[] {
+    const files = readDir(dir)
+
+    return files.map((file) => {
+      const filePath = path.join(dir, file)
+      const stats = fs.statSync(filePath)
+      const label = deleteSuffix(file)
+      const key = deleteSuffix(filePath)
+
+      if (stats.isDirectory()) {
+        return { label, key, children: traverseDir(filePath) }
+      }
+
+      return { label: getTitleOfMarkdown(filePath) || label, key, children: undefined }
+    })
+  }
+
+  return traverseDir(path.join(AppConfig.docsPath, directory))
+}

@@ -3,11 +3,12 @@ const AppConfig = {
   navigation: [
     {
       title: 'Frontend',
-      path: '/docs/frontend/git',
+      path: '/docs/frontend',
     },
-    { title: 'Backend', path: '/docs/backend/database/PostgreSQL 12.2 手册/0' },
-    { title: '云服务', path: '/docs/aws/0' },
-    { title: '工程化', path: '/docs/engineering/commit' },
+    { title: 'Backend', path: '/docs/backend' },
+    { title: '云服务', path: '/docs/aws' },
+    { title: '工程化', path: '/docs/engineering' },
+    { title: 'AI', path: '/docs/ai' },
     { title: 'CHANGELOG', path: '/change-log' },
   ],
   docsPath: 'docs',

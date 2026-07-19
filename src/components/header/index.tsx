@@ -11,6 +11,7 @@ import { BsGithub } from 'react-icons/bs'
 import DrawerSide from 'src/components/drawerSide'
 import styles from 'src/components/header/index.module.scss'
 import Search from 'src/components/search/Search'
+import ThemeToggle from 'src/components/themeToggle'
 import AppConfig from 'src/config/app'
 import useIsScroll from 'src/hooks/useIsScroll'
 interface HeaderProps {
@@ -138,6 +139,8 @@ const Header: FC<HeaderProps> = ({ nav }) => {
                   </Link>
                 </div>
               </div>
+              {/* 主题切换 */}
+              <ThemeToggle />
               {/* 搜索 */}
               <Search />
               <div className="dropdown dropdown-bottom dropdown-end flex lg:hidden max-h-full">

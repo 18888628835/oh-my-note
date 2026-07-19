@@ -47,14 +47,12 @@
   --color-thead-bg: #fafafa;
 }
 
-@media (prefers-color-scheme: dark) {
-  .markdown-body {
-    --color-border-muted: #64748b4d;
-    --color-canvas-subtle: var(--dark-code-block-bg-color);
-    --color-border-default: var(--basic-border-color);
-    --color-canvas-default: var(--dark-code-block-bg-color);
-    --color-thead-bg: var(--dark-code-block-header-bg-color);
-  }
+.dark .markdown-body {
+  --color-border-muted: #64748b4d;
+  --color-canvas-subtle: var(--dark-code-block-bg-color);
+  --color-border-default: var(--basic-border-color);
+  --color-canvas-default: var(--dark-code-block-bg-color);
+  --color-thead-bg: var(--dark-code-block-header-bg-color);
 }
 
 .markdown-body {
