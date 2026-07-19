@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.19.0](https://github.com/18888628835/oh-my-note/compare/v1.18.1...v1.19.0) (2026-07-19)
+
+
+### Features
+
+* add theme toggle functionality and improve dark mode support and index page support ([a607ff1](https://github.com/18888628835/oh-my-note/commit/a607ff14e250b015597ebaba04a126bb939c0c30))
+
+
+### Bug Fixes
+
+* ensure window reference is defined before using in scroll event listeners ([e9904e7](https://github.com/18888628835/oh-my-note/commit/e9904e72a4bb51e1d19844e8fd8c210077f820c9))
+
 ## [1.18.1](https://github.com/18888628835/oh-my-note/compare/v1.18.0...v1.18.1) (2023-09-04)
 
 
